@@ -1,15 +1,12 @@
-
-
-
-$(window).scroll(function (event) {
-	var top = $(window).scrollTop() // Получаем текущую позицию прокрутки
-	if (top > 0) {
-		// Проверяем, если прокрутка больше 0
-		$('.header').addClass('fixed').removeClass('absolute mt-2')
-	} else {
-		$('.header').removeClass('fixed').addClass('absolute mt-2')
-	}
-})
+// $(window).scroll(function (event) {
+// 	var top = $(window).scrollTop() // Получаем текущую позицию прокрутки
+// 	if (top > 0) {
+// 		// Проверяем, если прокрутка больше 0
+// 		$('.header').addClass('fixed').removeClass('absolute mt-2')
+// 	} else {
+// 		$('.header').removeClass('fixed').addClass('absolute mt-2')
+// 	}
+// })
 
 jQuery(document).ready(function () {
 	var e = document.querySelectorAll('.form-phone')
@@ -97,11 +94,17 @@ $(document).ready(function () {
 		// appendDots: $('.slider__controls-dots'),
 		responsive: [
 			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+				},
+			},
+			{
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 1,
 				},
-			},
+			},			
 		],
 	})
 })
