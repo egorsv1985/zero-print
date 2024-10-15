@@ -1,0 +1,16 @@
+.advantages {
+	&__item {
+		
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 1px;
+			background-color: #d4d4d4;
+			left: -40px;
+			top: 20px;
+			bottom: 8px;
+		}
+		
+	}
+}

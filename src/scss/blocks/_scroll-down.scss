@@ -1,0 +1,21 @@
+.down span{
+	margin: -10px;
+	animation: scroll-down 2s ease-in-out infinite;
+	&:first-child{
+		
+		translate: 0  -10px;
+		
+	}
+	&:last-child{
+		animation-delay: -0.2s;
+	}
+}
+
+@keyframes scroll-down{
+	0%{
+		opacity: 0;
+	}
+	
+	50%{opacity: .5;}
+	100%{opacity: 1;}
+}

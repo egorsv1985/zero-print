@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './components/**.*scss';
+@import './blocks/**.*scss';
+@import './base/**.*scss';
+@import './libs/**.*scss';
+@import './pages/**.*scss';
+@import './sections/**.*scss';
+.container {
+	padding-inline: 8px;
+}
+// *, *::after, *::before {
+// 	border: 1px solid red;
+// }

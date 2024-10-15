@@ -1,0 +1,47 @@
+<section class="py-12 how-works bg-secondary mt-14 rounded-t-standard">
+	<div class="container pt-14">
+		<h2 class="mb-4 text-4xl font-semibold text-center">Как мы работаем</h2>
+		<div class="w-1/2 mx-auto mb-5 text-lg text-center ">Сайт рыбатекст поможет дизайнеру, верстальщику,
+			вебмастеру сгенерировать несколько абзацев более менее осмысленного.</div>
+		<ol class="flex items-center justify-between w-full mb-8 space-x-2 space-y-2">
+			@@include('../blocks/_how-works-item.html',{
+			"icon": "order",
+			"title": "Заявка",
+			"text": "Вы оставляете заявку на сайте<br>или по телефону <a href='tel:+77716246461' class='text-nowrap'>+7 (771) 624 64 61</a>",
+			"width": "48",
+			"height": "60"
+			})
+			@@include('../blocks/_how-works-item.html',{
+			"icon": "processing",
+			"title": "Оформление",
+			"text": "Менеджер связывается с Вами для оформления заказа",
+			"width": "54",
+			"height": "60"
+			})
+			@@include('../blocks/_how-works-item.html',{
+			"icon": "realization",
+			"title": "Выполнение",
+			"text": "На производстве выполняется Ваш заказ согласно ТЗ",
+			"width": "65",
+			"height": "60"
+			})
+			@@include('../blocks/_how-works-item.html',{
+			"icon": "delivery",
+			"title": "Отправление",
+			"text": "Мы оперативно доставим посылку по указанному адресу",
+			"width": "68",
+			"height": "44"
+			})			
+		</ol>
+		<button data-modal-target="callback-modal" data-modal-toggle="callback-modal"
+			class="relative ms-16 inline-flex justify-between items-center gap-4 py-2 px-5 overflow-hidden font-medium transition-all border border-primary rounded-[80px]  hover:bg-primary group"
+			type="button">
+			<span
+				class="absolute inset-0 border-0 group-hover:border-[40px] ease-linear duration-100 transition-all border-primary rounded-full"></span>
+			<span
+				class="relative w-full text-lg transition-colors duration-500 ease-in-out text-txt_blue text-nowrap group-hover:text-white">оставить
+				заявку</span>
+			
+		</button>
+	</div>
+</section>
