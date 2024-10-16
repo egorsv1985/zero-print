@@ -1,108 +1,42 @@
 <section class="products bg-secondary pt-14 pb-[120px] -mb-5">
 	<div class="container">
-		<div class="flex justify-between items-end mb-8">
+		<div class="flex items-end justify-between mb-8">
 			<h2 class="text-4xl font-semibold">Сувенирная продукция</h2>
 			<a href="#"
-				class="pe-4 products__link text-lg leading-normal font-medium text-txt_blue hover:text-txt_dark">перейти в
+				class="text-lg font-medium leading-normal pe-4 products__link text-txt_blue hover:text-txt_dark">перейти в
 				каталог</a>
 		</div>
-		<div class="products-slider -mx-4">
-			<a href="#" class="products__item h-auto px-4  ">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products1.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="products__item h-auto px-4">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products2.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="products__item h-auto px-4">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products3.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="products__item h-auto px-4">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products4.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="products__item h-auto px-4">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products2.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="products__item h-auto px-4">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products3.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="products__item h-auto px-4">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products4.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
-			<a href="#" class="products__item h-auto px-4">
-				<div class="px-1 pt-1 pb-5 rounded-standard bg-white flex flex-col gap-2">
-					<div class="products__box-img w-full">
-						<img src="@img/products1.png" alt="печать " title="на шопперах" class="w-full h-auto" width="288"
-							height="215">
-					</div>
-					<div class="products__desc flex gap-4 justify-between items-end px-1">
-						<h3 class="font-medium text-xl">печать<br>на шопперах</h3>
-						<span class="inline-block text-txt_blue ">от 12 000₸</span>
-					</div>
-				</div>
-			</a>
+		<div class="-mx-4 products-slider">
+			@@include('../blocks/_products-item.html',{
+			"img": "products1",
+			"title": "на шопперах",
+			"price": "от 12 000₸"
+			})
+			@@include('../blocks/_products-item.html',{
+			"img": "products2",
+			"title": "на кружках",
+			"price": "от 12 000₸"
+			})
+			@@include('../blocks/_products-item.html',{
+			"img": "products3",
+			"title": "на бутылках",
+			"price": "от 12 000₸"
+			})
+			@@include('../blocks/_products-item.html',{
+			"img": "products4",
+			"title": "на ежедневниках",
+			"price": "от 12 000₸"
+			})
+			@@include('../blocks/_products-item.html',{
+			"img": "products2",
+			"title": "на бутылках",
+			"price": "от 12 000₸"
+			})
+			@@include('../blocks/_products-item.html',{
+			"img": "products3",
+			"title": "на кружках",
+			"price": "от 12 000₸"
+			})
 		</div>
 		<div class="slider__controls-dots"></div>
 	</div>
