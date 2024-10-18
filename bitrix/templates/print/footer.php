@@ -1,6 +1,82 @@
 <?
-if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
+if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 ?>
-	</body>
+<footer class="footer bg-secondary rounded-t-standard mt-11">
+	<div class="container">
+		<div class="border-b-[#EBEBEB] border-b border-solid py-12">
+			<div class="grid grid-cols-12 gap-8">
+				<div class="col-span-12 pt-2 md:col-span-3 lg:col-span-2">
+					<!-- на главной странице без ссылки -->
+					<a href="/" class="block max-w-full mb-6 text-center">
+						<img src="./images/logo.png" alt="студия Современных методов печати"
+							title="студия Современных методов печати" class="max-w-full" width="100" height="40" />
+					</a>
+					<ul class="flex items-center justify-between gap-2 max-w-36">
+						<li>
+							<a href="#"
+								class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
+								<img src="./images/icons/insta.svg" alt="instagram" title="instagram" width="18" height="18" />
+							</a>
+						</li>
+						<li>
+							<a href="#"
+								class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
+								<img src="./images/icons/viber.svg" alt="viber" title="viber" width="18" height="18" />
+							</a>
+						</li>
+						<li>
+							<a href="#"
+								class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
+								<img src="./images/icons/tic-tok.svg" alt="tik-tok" title="tik-tok" width="18" height="18" />
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-span-12 md:col-span-7 lg:col-span-10">
+					<div class="mb-5 lg:w-2/3">
+						<h2 class="mb-5 text-4xl font-semibold">Не нашли, что искали?</h2>
+						<div class="text-lg">Оставляйте заявку. Наш менеджер перезвонит вам в ближайшее время и ответит на ваши
+							вопросы.
+						</div>
+					</div>
+					<form class="grid justify-between grid-cols-10 gap-8" action="#">
+						<div class="col-span-12 md:col-span-6 xl:col-span-4">
+							<label for="name" class="hidden">Введите имя</label>
+							<input type="text" name="name" id="name"
+								class="block w-full px-5 py-4 text-lg bg-white border-none rounded-standard focus:outline-none text-black/50"
+								placeholder="Введите имя" required="" />
+						</div>
+						<div class="col-span-12 md:col-span-6 xl:col-span-4 ">
+							<label for="tel" class="hidden">+7 (_ _ _)-_ _ _-_ _-_ _</label>
+							<input type="tel" name="tel" id="tel" placeholder="+7 (_ _ _)-_ _ _-_ _-_ _"
+								class="block w-full p-4 text-lg bg-white border-none rounded-standard focus:outline-none form-phone text-black/50"
+								required="" />
+						</div>
+
+						<button type="submit"
+							class="relative xl:col-span-2 col-span-12 inline-flex justify-between items-center gap-4 py-2 px-5 overflow-hidden font-medium transition-all border border-primary rounded-[80px]  hover:bg-primary group">
+							<span
+								class="absolute inset-0 border-0 group-hover:border-[40px] ease-linear duration-100 transition-all border-primary rounded-full"></span>
+							<span
+								class="relative w-full text-lg transition-colors duration-500 ease-in-out text-txt_blue text-nowrap group-hover:text-white">оставить
+								заявку</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="py-8">
+			<div class="flex justify-between text-lg ">
+				<div>© 2023 zeroprint</div>
+				<a href="#">Карта сайта</a>
+				<a href="#">Разработка сайта: АТИБ</a>
+			</div>
+		</div>
+	</div>
+</footer>
+
+</div>
+</body>
+
 </html>

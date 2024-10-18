@@ -7,38 +7,24 @@
 		<a href="#" class="text-lg font-medium pe-4 news__link text-txt_blue hover:text-txt_dark">перейти к
 			новостям</a>
 	</div>
-	<div class="grid grid-cols-12 gap-8">
-		<div
-			class="col-span-12 overflow-hidden transition-all duration-300 ease-out lg:col-span-6 bg-dark rounded-standard">
-			<a href="#" class="relative block group">
-				<img src="@img/news1.png" class="block w-full transition-all duration-300 ease-in-out opacity-50 rounded-standard group-hover:scale-105 group-hover:opacity-100" alt="Название статьи"
-					title="Название статьи">
-				<div class="absolute bottom-0 w-full px-5 pb-5 start-0 md:w-4/5">
-					<div class="mb-5 text-xl font-semibold text-white uppercase ">Название статьи</div>
-					<div class="text-lg text-white ">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру
-						сгенерировать
-						несколько абзацев более
-						менее осмысленного
-						текста рыбы.</div>
-					<div
-						class="mt-8 border border-white rounded-[80px] py-2 px-5 w-full max-w-36 text-lg  text-white transition-colors ">
-						подробнее</div>
-				</div>
-			</a>
-		</div>
+	<div class="grid grid-cols-12 gap-8">		
+		@@include('../blocks/_news-item.html',{
+		"img": "news1",
+		"title": "Название статьи",
+		"text": "",
+		"col": "lg:col-span-6",
+		})
 		@@include('../blocks/_news-item.html',{
 		"img": "news2",
 		"title": "Название статьи",
-		"text": ""
+		"text": "",
+		"col": "lg:col-span-3 md:col-span-6",
 		})
 		@@include('../blocks/_news-item.html',{
 		"img": "news3",
 		"title": "Название статьи",
-		"text": ""
+		"text": "",
+		"col": "lg:col-span-3 md:col-span-6",
 		})
-
-
-
-
 	</div>
 </section>

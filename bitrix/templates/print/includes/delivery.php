@@ -1,0 +1,36 @@
+<section class="py-12 delivery">
+	<h2 class="mb-8 text-4xl font-semibold">Оплата и доставка</h2>
+	<div class="grid grid-cols-12 gap-8">
+		<div class="col-span-12 md:col-span-6">
+			<div class="h-full px-5 py-8 shadow-inner rounded-standard">
+				<div class="mb-3 text-xl font-semibold uppercase">способы оплаты</div>
+				<ul class="mb-4 list-disc ps-4">
+					<li class="py-1 text-lg ">Банковские перечисление</li>
+					<li class="py-1 text-lg ">Наличный расчет</li>
+				</ul>
+				<div class="flex gap-6">
+					<picture>
+						<source srcset="./images/bank.webp" type="image/webp"><img src="./images/bank.png"
+							alt="Банковские перечисление" title="Банковские перечисление" class="">
+					</picture>
+					<picture>
+						<source srcset="./images/cash.webp" type="image/webp"><img src="./images/cash.png"
+							alt="Наличный расчет" class="" title="Наличный расчет">
+					</picture>
+				</div>
+			</div>
+		</div>
+		<div class="col-span-12 md:col-span-6">
+			<div class="h-full px-5 py-8 shadow-inner rounded-standard">
+				<div class="mb-3 text-xl font-semibold uppercase">Варианты доставки</div>
+				<ul class="list-disc ps-4">
+					<li class="py-1 text-lg ">Казахстан: самовывоз, Казпочта и СДЭК</li>
+					<li class="py-1 text-lg ">Страны СНГ: СДЭК</li>
+					<li
+						class="relative px-1 pt-4 pb-1 mt-5 text-lg font-semibold text-white bg-primary before:bg-primary before:absolute before:-bottom-8 before:top-0 before:-left-9 before:-right-5 before:rounded-b-standard before:-z-10 ">
+						При заказе свыше от 1,5млн бесплатная доставка по всему Казахстану</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</section>

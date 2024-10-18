@@ -15,7 +15,35 @@ jQuery(document).ready(function () {
 		greedy: !1,
 		placeholder: '_',
 	})
+})
 
+// set the modal menu element
+// const $targetEl = document.getElementById('callback-modal')
+
+// // options with default values
+// const options = {
+// 	placement: 'bottom-right',
+// 	backdrop: 'dynamic',
+// 	backdropClasses: 'bg-gray_500/50  fixed inset-0 z-40',
+// 	closable: true,
+// 	onHide: () => {
+// 		console.log('modal is hidden')
+// 	},
+// 	onShow: () => {
+// 		console.log('modal is shown')
+// 	},
+// 	onToggle: () => {
+// 		console.log('modal has been toggled')
+// 	},
+// }
+
+// // instance options object
+// const instanceOptions = {
+// 	id: 'callback-modal',
+// 	override: true,
+// }
+
+$(document).ready(function () {
 	$('.burger').click(function () {
 		$('header').toggleClass('open')
 		$('body').toggleClass('overflow-hidden')
@@ -24,18 +52,19 @@ jQuery(document).ready(function () {
 
 		return false
 	})
+})
 
+$(document).ready(function () {
 	$('.reviews-slider').slick({
 		infinite: true,
 		speed: 500,
 		autoplay: false,
 		autoplaySpeed: 5000,
 		swipe: true,
-		arrows: true,
-
+		arrows: false,
 		cssEase: 'linear',
 		slidesToShow: 2,
-		slidesToScroll: 1,
+		slidesToScroll: 1,		
 		// appendArrows: $('.slider__controls-arrows'),
 		responsive: [
 			{
@@ -46,7 +75,9 @@ jQuery(document).ready(function () {
 			},
 		],
 	})
+})
 
+$(document).ready(function () {
 	$('.products-slider').slick({
 		infinite: true,
 		speed: 500,
@@ -80,7 +111,9 @@ jQuery(document).ready(function () {
 			},
 		],
 	})
+})
 
+$(document).ready(function () {
 	// Проверяем поддержку формата WebP
 	function supportsWebP() {
 		var elem = document.createElement('canvas')

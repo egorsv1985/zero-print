@@ -1,0 +1,5 @@
+#global_menu_global_menu_victory .adm-main-menu-item-icon{height:48px;background:rgba(0, 0, 0, 0) url("../../images/victory.options/v-global.svg") no-repeat scroll 15px 6px;opacity:1;}
+#global_menu_global_menu_victory.adm-main-menu-item-active .adm-main-menu-item-icon, #global_menu_global_menu_victory:hover .adm-main-menu-item-icon{background:rgba(0, 0, 0, 0) url("../../images/victory.options/v-global-active.svg") no-repeat scroll 15px 6px;}
+#global_menu_global_menu_victory .adm-main-menu-item-text{line-height: 11px;}
+#_global_menu_victory_items .victory_menu_item_options_main{background:rgba(0, 0, 0, 0) url("../../images/victory.options/settings-main.svg") no-repeat scroll 2px 0px;background-size: contain;}
+#_global_menu_victory_items .victory_menu_item_options{background:rgba(0, 0, 0, 0) url("../../images/victory.options/main-options.svg") no-repeat scroll 5px 1px;}

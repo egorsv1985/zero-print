@@ -1,0 +1,9 @@
+.hero__desc::before{
+		
+		background: url("@img/icons/arrow.svg") no-repeat center / 105px 100px;
+		position: absolute;
+		
+		bottom: -100px;
+		width: 105px;
+		height: 100px;
+}
