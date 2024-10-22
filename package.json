@@ -8,7 +8,8 @@
 		"docs": "cross-env NODE_ENV=production gulp docs",
 		"zip": "cross-env NODE_ENV=production gulp zipTask",
 		"zip-min": "cross-env NODE_ENV=production gulp zipTaskMin",
-		"min": "gulp min"
+		"min": "gulp min",
+		"bitrix": "gulp bitrix"
 	},
 	"type": "module",
 	"author": "Egor Sabancev",

@@ -1,10 +1,6 @@
-<nav class="nav-menu mt-12 pt-12 lg:mt-0 lg:pt-0">
-	<ul class="flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4 xl:gap-6 text-lg text-txt_dark ">
-		<li>
-			@@include('_menu-item.html',{
-			"link": "index.html",
-			"item": "главная" })
-		</li>
+<nav class="pt-12 mt-12 nav-menu lg:mt-0 lg:pt-0">
+	<ul
+		class="flex flex-col items-center justify-center gap-4 text-lg lg:flex-row lg:justify-between xl:gap-6 text-txt_dark ">
 		<li>
 			@@include('_menu-item.html',{
 			"link": "services.html",
@@ -24,6 +20,11 @@
 			@@include('_menu-item.html',{
 			"link": "news.html",
 			"item": "новости" })
-		</li>	
+		</li>
+		<li>
+			@@include('_menu-item.html',{
+			"link": "contacts.html",
+			"item": "Контакты" })
+		</li>
 	</ul>
 </nav>

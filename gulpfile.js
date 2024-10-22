@@ -14,6 +14,7 @@ import { scriptsMin } from './gulp/tasks/scriptsMin.js'
 import { server } from './gulp/tasks/server.js'
 import { styles } from './gulp/tasks/styles.js'
 import { stylesMin } from './gulp/tasks/stylesMin.js'
+import { stylesBitrix } from './gulp/tasks/stylesBitrix.js'
 
 // Экспорт задач
 
@@ -29,6 +30,7 @@ export {
 	server,
 	styles,
 	stylesMin,
+	stylesBitrix,
 }
 
 // Задача для отслеживания изменений в файлах и автоматической пересборки
@@ -39,6 +41,10 @@ export const watch = () => {
 	plugins.gulp.watch(paths.src.fonts, plugins.gulp.series('fonts'))
 	plugins.gulp.watch(paths.src.files, plugins.gulp.series('files'))
 	plugins.gulp.watch(paths.src.js, plugins.gulp.series('scripts'))
+}
+export const watchBitrix = () => {	 
+	plugins.gulp.watch(paths.src.scss, plugins.gulp.series(stylesBitrix))
+	plugins.gulp.watch(paths.src.php, plugins.gulp.series(stylesBitrix))
 }
 
 // Задача для разработки
@@ -73,5 +79,8 @@ export const zipTaskMin = plugins.gulp.series(
 
 // Задача для минификации стилей и JavaScript
 export const min = plugins.gulp.series(stylesMin, scriptsMin)
+
+// Задача для Bitrix
+export const bitrix = plugins.gulp.series(stylesBitrix, watchBitrix)
 
 export default dev

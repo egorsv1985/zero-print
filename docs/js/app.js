@@ -1,6 +1,3 @@
-
-
-
 // $(window).scroll(function (event) {
 // 	var top = $(window).scrollTop() // Получаем текущую позицию прокрутки
 // 	if (top > 0) {
@@ -70,7 +67,7 @@ $(document).ready(function () {
 		cssEase: 'linear',
 		slidesToShow: 2,
 		slidesToScroll: 1,
-		// appendArrows: $('.slider__controls-arrows'),
+		appendArrows: $('.slider__controls-arrows'),
 		responsive: [
 			{
 				breakpoint: 768,

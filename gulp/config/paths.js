@@ -4,6 +4,7 @@ export const paths = {
 		html: './src/html/**/*.html',
 		pug: './src/pug/**/*.pug',
 		scss: './src/scss/**/*.scss',
+		php: './public_html/**/*.php',
 		images: './src/images/**/*',
 		fonts: './src/fonts/**/*',
 		files: './src/files/**/*',

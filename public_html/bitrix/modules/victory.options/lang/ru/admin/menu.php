@@ -1,7 +1,0 @@
-<?php
-$MESS["VICTORY_OPTIONS_GLOBAL_MENU_TEXT"] = "Victory: Настройки";
-$MESS["VICTORY_OPTIONS_GLOBAL_MENU_TITLE"] = "Victory: Настройки";
-$MESS["VICTORY_OPTIONS_MAIN_MENU_TEXT"] = "Victory: Настройки";
-$MESS["VICTORY_OPTIONS_MAIN_MENU_TITLE"] = "Victory: Настройки";
-$MESS["VICTORY_OPTIONS_MENU_OPTIONS_TEXT"] = "Параметры";
-$MESS["VICTORY_OPTIONS_MENU_OPTIONS_TITLE"] = "Параметры";

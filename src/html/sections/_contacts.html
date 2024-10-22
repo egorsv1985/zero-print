@@ -1,0 +1,37 @@
+<section class="pb-12 contacts">
+	<div class="container">
+		<div class="grid grid-cols-12 pb-3 bg-secondary rounded-standard lg:pb-0">
+			<div class="col-span-12 lg:col-span-6">
+				<img src="@img/map.png" alt="">
+			</div>
+			<div class="col-span-12 lg:col-span-6">
+				<div class="flex flex-col px-4 pt-14">					
+					<h1 class="mb-10 text-5xl font-semibold text-txt_dark">Контакты</h1>
+					<div class="grid grid-cols-12 gap-y-12 mb-11">
+						@@include('../blocks/_contacts-item.html',{
+							"icon": "map",
+						"title": "Адрес",
+						"desc": "Алматы, Озерковская наб. 22/24с1",
+						})
+						@@include('../blocks/_contacts-item.html',{
+							"icon": "time",
+						"title": "График работы",
+						"desc": "Пн–пт: с 9:00 до 21:00.<br>Сб, вс — с 10:00 до 21:00.",
+						})
+						@@include('../blocks/_contacts-item.html',{
+							"icon": "mail",
+						"title": "Email",
+						"desc": "zeroprint.kz@mail.ru,",
+						})
+						@@include('../blocks/_contacts-item.html',{
+							"icon": "phone",
+						"title": "Телефон",
+						"desc": "+7 747-15-84-039",
+						})
+					</div>
+						@@include('../blocks/_messengers-contacts.html',{})
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
