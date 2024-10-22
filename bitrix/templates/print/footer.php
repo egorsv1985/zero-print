@@ -9,29 +9,13 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				<div class="col-span-12 pt-2 md:col-span-3 lg:col-span-2">
 					<!-- на главной странице без ссылки -->
 					<a href="/" class="block max-w-full mb-6 text-center">
-						<img src="./images/logo.png" alt="студия Современных методов печати"
+						<img src="<?= SITE_TEMPLATE_PATH; ?>/images/logo.png" alt="студия Современных методов печати"
 							title="студия Современных методов печати" class="max-w-full" width="100" height="40" />
 					</a>
-					<ul class="flex items-center justify-between gap-2 max-w-36">
-						<li>
-							<a href="#"
-								class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-								<img src="./images/icons/insta.svg" alt="instagram" title="instagram" width="18" height="18" />
-							</a>
-						</li>
-						<li>
-							<a href="#"
-								class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-								<img src="./images/icons/viber.svg" alt="viber" title="viber" width="18" height="18" />
-							</a>
-						</li>
-						<li>
-							<a href="#"
-								class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-								<img src="./images/icons/tic-tok.svg" alt="tik-tok" title="tik-tok" width="18" height="18" />
-							</a>
-						</li>
-					</ul>
+					<?
+					$APPLICATION->IncludeFile("includes/social.php", array(),);
+					?>
+
 				</div>
 				<div class="col-span-12 md:col-span-7 lg:col-span-10">
 					<div class="mb-5 lg:w-2/3">

@@ -101,57 +101,8 @@ if (CModule::IncludeModule("victory.options")) {
 					<div class="col-span-6 sm:col-span-3 lg:col-span-2">
 						<div class="flex justify-center sm:justify-end">
 							<?
-							$insta_link = \Victory\Options\CVictoryOptions::getOptionValue('insta_link');
-							$vb_link = \Victory\Options\CVictoryOptions::getOptionValue('vb_link');
-							$tictoc_link = \Victory\Options\CVictoryOptions::getOptionValue('tictoc_link');
-							if ($insta_link || $vb_link || $tictoc_link) :
-							?>
-								<ul class="flex items-center justify-between gap-2 max-w-36">
-									<? if ($insta_link) : ?>
-										<li class="social__item">
-											<a href="<?= $insta_link ?>" target="_blank" class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-												<img src="<?= SITE_TEMPLATE_PATH ?>/images/icons/insta.svg" width="18" height="18" alt="instagram" title="instagram" />
-											</a>
-										</li>
-									<? endif; ?>
-									<? if ($vb_link) : ?>
-										<li class=" social__item">
-											<a href="<?= $vb_link ?>" target="_blank" class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-												<img src="<?= SITE_TEMPLATE_PATH ?>/images/icons/viber.svg" width="18" height="18" alt="viber" title="viber" />
-											</a>
-										</li>
-									<? endif; ?>
-									<? if ($tictoc_link) : ?>
-										<li class="social__item">
-											<a href="<?= $tictoc_link ?>" target="_blank" class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-												<img src="<?= SITE_TEMPLATE_PATH ?>/images/icons/tic-tok.svg" width="18" height="18" alt="tic-tok" title="tic-tok" />
-											</a>
-										</li>
-									<? endif; ?>
-								</ul>
-							<? endif; ?>
-							<!-- <ul class="flex items-center justify-between gap-2 max-w-36">
-								<li>
-									<a href="#"
-										class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-										<img src="<?= SITE_TEMPLATE_PATH; ?>/images/icons/insta.svg" alt="instagram" title="instagram" width="18"
-											height="18" />
-									</a>
-								</li>
-								<li>
-									<a href="#"
-										class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-										<img src="<?= SITE_TEMPLATE_PATH; ?>/images/icons/viber.svg" alt="viber" title="viber" width="18" height="18" />
-									</a>
-								</li>
-								<li>
-									<a href="#"
-										class="flex items-center justify-center transition duration-500 bg-white rounded-full w-9 h-9 group/messengers">
-										<img src="<?= SITE_TEMPLATE_PATH; ?>/images/icons/tic-tok.svg" alt="tik-tok" title="tik-tok" width="18"
-											height="18" />
-									</a>
-								</li>
-							</ul> -->
+							$APPLICATION->IncludeFile("includes/social.php", array(),);
+							?>							
 						</div>
 					</div>
 					<div class="col-span-2 lg:hidden ">
@@ -167,20 +118,20 @@ if (CModule::IncludeModule("victory.options")) {
 			</div>
 		</header>
 		<main>
-			<div class="container">
-				<? if (TYPE_PAGE == 'TEXT' || TYPE_PAGE == 'CONTACTS') : ?>
-					<? $APPLICATION->IncludeComponent(
-						"bitrix:breadcrumb",
-						"",
-						array(
-							"PATH" => "",
-							"SITE_ID" => SITE_ID,
-							"START_FROM" => "0"
-						)
-					); ?>
-				<? endif; ?>
-				<? if (TYPE_PAGE == 'MAIN') : ?>
-					<section class="pt-10 mt-20 mb-4 overflow-hidden hero pb-9">
+			<? if (TYPE_PAGE == 'TEXT') : ?>
+				<? $APPLICATION->IncludeComponent(
+					"bitrix:breadcrumb",
+					"",
+					array(
+						"PATH" => "",
+						"SITE_ID" => SITE_ID,
+						"START_FROM" => "0"
+					)
+				); ?>
+			<? endif; ?>
+			<? if (TYPE_PAGE == 'MAIN') : ?>
+				<section class="pt-10 mt-20 mb-4 overflow-hidden hero pb-9">
+					<div class="container">
 						<div class="flex flex-col px-8 pt-12 rounded-standard lg:pt-48 hero__bg "
 							style="background: #E4E9EE url(<?= SITE_TEMPLATE_PATH ?>/images/bg-main-removebg.png) no-repeat right 0% / 100%">
 							<h1 class="text-6xl lg:max-w-[85%]  text-txt_dark font-semibold uppercase mb-5">студия <span
@@ -205,5 +156,6 @@ if (CModule::IncludeModule("victory.options")) {
 								<span class="w-5 h-5 rotate-45 border-b-4 border-r-4 border-dark"></span>
 							</div>
 						</div>
-					</section>
-				<? endif; ?>
+					</div>
+				</section>
+			<? endif; ?>
