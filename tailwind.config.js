@@ -4,7 +4,7 @@ export default {
 		'./src/**/*.{html,js}', // Путь к вашим локальным файлам
 		'./public_html/**/*.{php,js}', // Путь к файлам на сервере Битрикс
 	],
-	
+
 	safelist: [],
 	theme: {
 		extend: {
@@ -60,6 +60,9 @@ export default {
 		container: {
 			center: true,
 		},
+		// gridColumn: {
+		// 	'span-full': 'span 5 / span -1',
+		// },
 	},
 	plugins: [
 		require('flowbite/plugin'),

@@ -2,6 +2,7 @@
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 	die();
 ?>
+</main>
 <footer class="footer bg-secondary rounded-t-standard mt-11">
 	<div class="container">
 		<div class="border-b-[#EBEBEB] border-b border-solid py-12">
@@ -59,8 +60,5 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 		</div>
 	</div>
 </footer>
-
-</div>
 </body>
-
 </html>

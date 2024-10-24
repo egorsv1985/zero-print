@@ -1,3 +1,6 @@
+
+
+
 // $(window).scroll(function (event) {
 // 	var top = $(window).scrollTop() // Получаем текущую позицию прокрутки
 // 	if (top > 0) {

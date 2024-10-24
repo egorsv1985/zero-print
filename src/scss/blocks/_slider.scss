@@ -8,11 +8,11 @@
 	text-indent: -9999px;
 	overflow: hidden;
 	z-index: 10;
-	&:hover {		
+	&:hover {
 		border: 1px solid rgba(255, 255, 255, 0.5);
 	}
 }
-.slick-next{
+.slick-next {
 	right: -15px;
 	transform: rotate(180deg);
 }
@@ -34,4 +34,7 @@
 			background-color: #3742f3;
 		}
 	}
+}
+.slick-track {
+	display: flex;
 }

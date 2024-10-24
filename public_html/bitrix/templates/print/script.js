@@ -65,7 +65,7 @@ $(document).ready(function () {
 		cssEase: 'linear',
 		slidesToShow: 2,
 		slidesToScroll: 1,		
-		appendArrows: $('.slider__controls-arrows'),
+		// appendArrows: $('.slider__controls-arrows'),
 		responsive: [
 			{
 				breakpoint: 768,
@@ -148,4 +148,7 @@ $(document).ready(function () {
 	if (supportsAvif()) {
 		$('body').addClass('avif')
 	}
+	Fancybox.bind('.fancybox, [data-fancybox]', {
+		// Your custom options
+	})
 })
