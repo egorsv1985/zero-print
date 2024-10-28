@@ -20,6 +20,9 @@ $asset->addJs('https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jqu
 $asset->addJs('https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.min.js');
 $asset->addCss('https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.min.css');
 
+// $asset->addCss(SITE_TEMPLATE_PATH . '/libs/bootstrap/css/bootstrap.css');
+// $asset->addJs(SITE_TEMPLATE_PATH . '/libs/bootstrap/js/bootstrap.js');
+
 $asset->addCss('https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.css');
 $asset->addJs('https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
 $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');

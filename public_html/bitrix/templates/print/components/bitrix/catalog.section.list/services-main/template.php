@@ -35,9 +35,9 @@ $this->setFrameMode(true);
 					$arSection["PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arSection["PICTURE"]["SRC"], 6);
 				}
 				// Добавляем класс для последнего элемента
-				// $colClass = ($key === array_key_last($arResult['SECTIONS'])) ? 'xl:col-span-4 xl:col-start-5 xl:col-end-[-1]' : 'md:col-span-6 xl:col-span-4';
+				// $colClass = ($key === array_key_last($arResult['SECTIONS'])) ? 'xl:col-start-5 xl:col-end-[-1]' : 'col-span-12 md:col-span-6 xl:col-span-4';
 			?>
-				<a href="<?= $arSection['SECTION_PAGE_URL']; ?>" class="flex flex-col col-span-12 gap-6 md:col-span-6 xl:col-span-4 ">
+				<a href="<?= $arSection['SECTION_PAGE_URL']; ?>" class="flex flex-col gap-6 col-span-12 md:col-span-6 xl:col-span-4 <?= $colClass; ?>">
 					<div class="services-main__box-img rounded-standard">
 						<picture>
 							<source srcset="<?= $arSection["PICTURE"]["WEBP"] ?>" type="image/webp">

@@ -1,32 +1,34 @@
 <header class=" mt-2  header z-[120] fixed top-0 inset-x-0">
-	<div class="container px-2 py-5 md:px-8 bg-secondary rounded-standard">
-		<div class="z-40 grid items-center justify-between grid-cols-12 sm:gap-6">
-			<div class="col-span-4 sm:col-span-3 lg:col-span-1 xl:col-span-2">
-				<!-- на главной странице без ссылки -->
-				<a href="/" class="block max-w-full text-center">
-					<img src="@img/logo.png" alt="студия Современных методов печати" title="студия Современных методов печати"
-						class="h-auto max-w-full" width="100" height="40" />
-				</a>
-			</div>
-			<div class="xl:col-span-5 lg:col-span-6 menu lg:block">
-				@@include('../blocks/_main-menu.html')
-			</div>
-			<div class="hidden col-span-4 lg:col-span-3 sm:block">
-				@@include('../blocks/_search.html',{})
-			</div>
-			<div class="col-span-6 sm:col-span-3 lg:col-span-2">
-				<div class="flex justify-center sm:justify-end">
-					@@include('../blocks/_messengers.html',{})
+	<div class="container ">
+		<div class="px-2 py-5 md:px-8 bg-secondary rounded-standard">
+			<div class="z-40 grid items-center justify-between grid-cols-12 sm:gap-6">
+				<div class="col-span-4 sm:col-span-3 lg:col-span-1 xl:col-span-2">
+					<!-- на главной странице без ссылки -->
+					<a href="/" class="block max-w-full text-center">
+						<img src="@img/logo.png" alt="студия Современных методов печати" title="студия Современных методов печати"
+							class="h-auto max-w-full" width="100" height="40" />
+					</a>
 				</div>
-			</div>
-			<div class="col-span-2 lg:hidden ">
-				<div class="flex justify-end">		
-					<button type="button" class="w-full header__burger burger" aria-label="Открыть меню">
-						<span class="relative flex items-center justify-center w-full h-full burger__inner">
-							<span></span>
-						</span>
-					</button>
-					
+				<div class="xl:col-span-5 lg:col-span-6 menu lg:block">
+					@@include('../blocks/_main-menu.html')
+				</div>
+				<div class="hidden col-span-4 lg:col-span-3 sm:block">
+					@@include('../blocks/_search.html',{})
+				</div>
+				<div class="col-span-6 sm:col-span-3 lg:col-span-2">
+					<div class="flex justify-center sm:justify-end">
+						@@include('../blocks/_messengers.html',{})
+					</div>
+				</div>
+				<div class="col-span-2 lg:hidden ">
+					<div class="flex justify-end">
+						<button type="button" class="w-full header__burger burger" aria-label="Открыть меню">
+							<span class="relative flex items-center justify-center w-full h-full burger__inner">
+								<span></span>
+							</span>
+						</button>
+
+					</div>
 				</div>
 			</div>
 		</div>
