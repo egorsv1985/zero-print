@@ -1,6 +1,6 @@
+
 <section class="py-12 my-3 services-main">
 	<div class="container">
-
 		<h2 class="mb-3 text-4xl font-semibold">Виды услуг</h2>
 		<div class="flex flex-col items-end justify-between gap-3 mb-8 lg:flex-row">
 			<div class="text-lg lg:w-3/5">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать
@@ -13,26 +13,28 @@
 			@@include('../blocks/_services-main-item.html',{
 			"img": "services1",
 			"title": "вышивка на одежде",
+			"col": "col-span-12  md:col-span-6 xl:col-span-4",			
 			})
 			@@include('../blocks/_services-main-item.html',{
 			"img": "services2",
 			"title": "нанесение изображений",
+			"col": "col-span-12  md:col-span-6 xl:col-span-4",			
 			})
 			@@include('../blocks/_services-main-item.html',{
 			"img": "services3",
 			"title": "пошив одежды",
+			"col": "col-span-12  md:col-span-6 xl:col-span-4",			
 			})
 			@@include('../blocks/_services-main-item.html',{
 			"img": "services4",
 			"title": "корпоративный мерч",
+			"col": "col-span-12  md:col-span-6 xl:col-span-4",			
 			})
-			<a href="#" class="flex flex-col col-span-12 gap-6 xl:col-span-4 xl:col-start-5 xl:col-end-[-1]">
-				<div class="services-main__box-img rounded-standard">
-					<img src="@img/services5.png" title="готовая продукция: одежда, сувениры"
-						alt="готовая продукция: одежда, сувениры" class="w-full h-auto rounded-standard" width="408" height="300">
-				</div>
-				<div class="text-xl font-semibold uppercase ">готовая продукция: одежда, сувениры</div>
-			</a>
+			@@include('../blocks/_services-main-item.html',{
+			"img": "services5",
+			"title": "готовая продукция: одежда, сувениры",
+			"col": "col-span-full xl:col-start-5",			
+			})		
 		</div>
 	</div>
 </section>

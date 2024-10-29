@@ -1007,6 +1007,9 @@ input[type="range"]::-ms-fill-lower {
   left: 0px;
   right: 0px;
 }
+.-top-9 {
+  top: -2.25rem;
+}
 .bottom-0 {
   bottom: 0px;
 }
@@ -1076,8 +1079,8 @@ input[type="range"]::-ms-fill-lower {
 .col-span-9 {
   grid-column: span 9 / span 9;
 }
-.col-auto {
-  grid-column: auto;
+.col-span-full {
+  grid-column: 1 / -1;
 }
 .-mx-4 {
   margin-left: -1rem;
@@ -1141,6 +1144,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .ms-3 {
   margin-inline-start: 0.75rem;
+}
+.ms-\[22\%\] {
+  margin-inline-start: 22%;
 }
 .ms-auto {
   margin-inline-start: auto;
@@ -1213,9 +1219,6 @@ input[type="range"]::-ms-fill-lower {
 }
 .hidden {
   display: none;
-}
-.aspect-\[204\/125\] {
-  aspect-ratio: 204/125;
 }
 .size-10 {
   width: 2.5rem;
@@ -1388,6 +1391,9 @@ input[type="range"]::-ms-fill-lower {
 .flex-col {
   flex-direction: column;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
 .items-start {
   align-items: flex-start;
 }
@@ -1460,11 +1466,6 @@ input[type="range"]::-ms-fill-lower {
   --tw-space-x-reverse: 0;
   margin-right: calc(2rem * var(--tw-space-x-reverse));
   margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
-}
-.space-y-8 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 .self-center {
   align-self: center;
@@ -1600,6 +1601,10 @@ input[type="range"]::-ms-fill-lower {
 .bg-gray-900\/50 {
   background-color: rgb(17 24 39 / 0.5);
 }
+.bg-light_gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(240 239 239 / var(--tw-bg-opacity));
+}
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(55 66 243 / var(--tw-bg-opacity));
@@ -1618,6 +1623,15 @@ input[type="range"]::-ms-fill-lower {
 .bg-white\/50 {
   background-color: rgb(255 255 255 / 0.5);
 }
+.bg-cover {
+  background-size: cover;
+}
+.bg-center {
+  background-position: center;
+}
+.bg-no-repeat {
+  background-repeat: no-repeat;
+}
 .p-1 {
   padding: 0.25rem;
 }
@@ -1632,6 +1646,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .p-5 {
   padding: 1.25rem;
+}
+.p-6 {
+  padding: 1.5rem;
 }
 .p-8 {
   padding: 2rem;
@@ -1722,6 +1739,9 @@ input[type="range"]::-ms-fill-lower {
 .pb-3 {
   padding-bottom: 0.75rem;
 }
+.pb-36 {
+  padding-bottom: 9rem;
+}
 .pb-5 {
   padding-bottom: 1.25rem;
 }
@@ -1739,6 +1759,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .pe-4 {
   padding-inline-end: 1rem;
+}
+.pe-5 {
+  padding-inline-end: 1.25rem;
 }
 .ps-4 {
   padding-inline-start: 1rem;
@@ -1769,6 +1792,9 @@ input[type="range"]::-ms-fill-lower {
 }
 .pt-\[11\%\] {
   padding-top: 11%;
+}
+.pt-\[300px\] {
+  padding-top: 300px;
 }
 .text-center {
   text-align: center;
@@ -2197,9 +2223,19 @@ input[type="range"]::-ms-fill-lower {
   left: 50%;
 }
 
+.before\:right-0::before {
+  content: var(--tw-content);
+  right: 0px;
+}
+
 .before\:top-0::before {
   content: var(--tw-content);
   top: 0px;
+}
+
+.before\:top-1\/2::before {
+  content: var(--tw-content);
+  top: 50%;
 }
 
 .before\:-z-10::before {
@@ -2212,9 +2248,21 @@ input[type="range"]::-ms-fill-lower {
   display: none;
 }
 
+.before\:size-\[6px\]::before {
+  content: var(--tw-content);
+  width: 6px;
+  height: 6px;
+}
+
 .before\:w-0::before {
   content: var(--tw-content);
   width: 0px;
+}
+
+.before\:-translate-y-1\/2::before {
+  content: var(--tw-content);
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .before\:overflow-hidden::before {
@@ -2253,6 +2301,11 @@ input[type="range"]::-ms-fill-lower {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(55 66 243 / var(--tw-bg-opacity));
+}
+
+.before\:bg-\[url\(\.\.\/images\/icons\/krest\.svg\)\]::before {
+  content: var(--tw-content);
+  background-image: url(../images/icons/krest.svg);
 }
 
 .before\:transition-\[width\]::before {
@@ -2647,12 +2700,12 @@ input[type="range"]::-ms-fill-lower {
     grid-column: span 6 / span 6;
   }
 
-  .lg\:row-span-3 {
-    grid-row: span 3 / span 3;
+  .lg\:row-span-2 {
+    grid-row: span 2 / span 2;
   }
 
-  .lg\:mb-0 {
-    margin-bottom: 0px;
+  .lg\:row-span-3 {
+    grid-row: span 3 / span 3;
   }
 
   .lg\:mb-32 {
@@ -2669,10 +2722,6 @@ input[type="range"]::-ms-fill-lower {
 
   .lg\:hidden {
     display: none;
-  }
-
-  .lg\:aspect-auto {
-    aspect-ratio: auto;
   }
 
   .lg\:w-1\/2 {
@@ -2843,6 +2892,44 @@ input[type="range"]::-ms-fill-lower {
 .rtl\:space-x-reverse:where([dir="rtl"], [dir="rtl"] *) > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
 }
+@font-face {
+  font-family: "Onest-medium";
+  font-display: swap;
+  src: url("../fonts/Onest-Medium.woff2") format("woff2"), url("../fonts/Onest-Medium.ttf") format("tff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Onest";
+  font-display: swap;
+  src: url("../fonts/Onest-Regular.woff2") format("woff2"), url("../fonts/Onest-Regular.ttf") format("tff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Onest-semibold";
+  font-display: swap;
+  src: url("../fonts/Onest-SemiBold.woff2") format("woff2"), url("../fonts/Onest-SemiBold.ttf") format("tff");
+  font-weight: 400;
+  font-style: normal;
+}
+/* For browsers that support clamp and container queries */
+@supports (font-size: clamp(1rem, 1cqi, 1rem)) {
+  :root {
+    --6xl: clamp(1.63rem, 2.66cqi + 1.09rem, 3.75rem);
+  }
+}
+/* For browsers that don't support clamp or container queries */
+@supports not (font-size: clamp(1rem, 1cqi, 1rem)) {
+  :root {
+    --6xl: 1.63rem;
+  }
+  @media screen and (min-width: 1600px) {
+    :root {
+      --6xl: 3.75rem;
+    }
+  }
+}
 .burger {
   height: 30px;
   border: none;
@@ -2883,42 +2970,4 @@ input[type="range"]::-ms-fill-lower {
   transform: rotate(45deg);
   bottom: calc(50% - 1px);
   width: 30px;
-}
-@font-face {
-  font-family: "Onest-medium";
-  font-display: swap;
-  src: url("../fonts/Onest-Medium.woff2") format("woff2"), url("../fonts/Onest-Medium.ttf") format("tff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Onest";
-  font-display: swap;
-  src: url("../fonts/Onest-Regular.woff2") format("woff2"), url("../fonts/Onest-Regular.ttf") format("tff");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Onest-semibold";
-  font-display: swap;
-  src: url("../fonts/Onest-SemiBold.woff2") format("woff2"), url("../fonts/Onest-SemiBold.ttf") format("tff");
-  font-weight: 400;
-  font-style: normal;
-}
-/* For browsers that support clamp and container queries */
-@supports (font-size: clamp(1rem, 1cqi, 1rem)) {
-  :root {
-    --6xl: clamp(1.63rem, 2.66cqi + 1.09rem, 3.75rem);
-  }
-}
-/* For browsers that don't support clamp or container queries */
-@supports not (font-size: clamp(1rem, 1cqi, 1rem)) {
-  :root {
-    --6xl: 1.63rem;
-  }
-  @media screen and (min-width: 1600px) {
-    :root {
-      --6xl: 3.75rem;
-    }
-  }
 }

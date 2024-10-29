@@ -49,9 +49,10 @@ export default {
 			txt_blue: '#3742f3',
 			txt_gray: '#808080',
 			txt_breadcrumb: '#878787',
-			dark: '#333333',
+			dark: '#333',
 			txt_dark: '#333',
 			white: '#fff',
+			light_gray: '#F0EFEF',
 		},
 		listStyleType: {
 			none: 'none',
