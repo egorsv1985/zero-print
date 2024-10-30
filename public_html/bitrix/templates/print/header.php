@@ -144,9 +144,9 @@ if (CModule::IncludeModule("victory.options")) {
 				<div class="container">
 					<div class="flex flex-col px-8 pt-12 rounded-standard lg:pt-48 hero__bg "
 						style="background: #E4E9EE url(<?= SITE_TEMPLATE_PATH ?>/images/bg-main-removebg.png) no-repeat right bottom / 100%">
-						<h1 class="text-6xl lg:max-w-[85%]  text-txt_dark font-semibold uppercase mb-5">студия <span
+						<h1 class="mb-5 text-6xl font-semibold uppercase sm:max-w-[61%] text-txt_dark">студия <span
 								class="text-txt_blue">Современных</span> методов печати</h1>
-						<p class="text-txt_dark lg:max-w-[42%] text-2xl mb-14 hero__desc relative before:hidden md:before:block before:left-1/2 md:before:left-1/3 lg:before:left-[57%]"><?= \Victory\Options\CVictoryOptions::getOptionValue('hero_description'); ?></p>
+						<p class="text-txt_dark sm:max-w-[42%] text-2xl mb-14 hero__desc relative before:hidden md:before:block before:left-1/2 md:before:left-1/3 lg:before:left-[57%]"><?= \Victory\Options\CVictoryOptions::getOptionValue('hero_description'); ?></p>
 						<button data-modal-target="callback-modal" data-modal-toggle="callback-modal"
 							class="relative inline-flex lg:mb-32 mb-12 max-w-[220px] justify-between items-center gap-4 ps-4 pe-1 py-1 overflow-hidden font-medium transition-all rounded-[80px] bg-primary hover:bg-white group"
 							type="button">

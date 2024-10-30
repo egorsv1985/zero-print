@@ -45,11 +45,18 @@ export const serverOptions = {
 // Функция для обработки ошибок с уведомлением
 export const plumberNotify = title => {
 	return {
-		errorHandler: plugins.notify.onError({
-			title: title,
-			message: 'Error <%= error.message %>',
-			sound: false,
-		}),
+		errorHandler: error => {
+			// Логируем информацию об ошибке в консоль
+			console.error('Ошибка в файле:', error.file) // Выводим файл с ошибкой
+			console.error('Сообщение об ошибке:', error.message) // Выводим сообщение об ошибке
+
+			// Отправляем уведомление
+			plugins.notify.onError({
+				title: title,
+				message: 'Error: <%= error.message %>',
+				sound: false,
+			})(error) // Вызов уведомления с ошибкой
+		},
 	}
 }
 export const postcssPlugins = postcssConfigModule

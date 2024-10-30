@@ -1,11 +1,10 @@
 <div class="services-list">
 	<div class="container">
 		<h2 class="mb-3 text-4xl font-semibold">Услуги</h2>
-		<div class="flex mb-10 text-lg font-medium text-txt_gray">
+		<div class="flex text-lg font-medium mb-11 text-txt_gray">
 			@@include('../blocks/_services-list-item.html',{
 			"text": "сувениры",
-			"before": "pe-5 before:absolute before:right-0 before:top-1/2 before:size-[6px] before:-translate-y-1/2
-			before:bg-[url(../images/icons/krest.svg)] relative",
+			"before": "pe-5 before:absolute before:right-0 before:top-1/2 before:size-[6px] before:-translate-y-1/2 before:bg-[url(../images/icons/krest.svg)] relative",
 			"active": "text-white bg-primary",
 			})
 			@@include('../blocks/_services-list-item.html',{
@@ -34,20 +33,158 @@
 			"active": "",
 			})
 		</div>
-		<div class="grid grid-cols-12">
+		<div class="grid grid-cols-12 gap-7">
 			<div class="col-span-3">
 				<form action="#" class="p-6 bg-secondary rounded-t-standard">
 					<h3 class="mb-5 text-xl font-semibold text-txt_dark">Каталог</h3>
-					<div class="text-lg checkbox-list text-txt_dark">
+					<div class="text-lg checkbox-list text-txt_dark mb-9">
 						@@include('../blocks/_checkbox-list-item.html',{
 						"checkbox": "Посуда",
 						"num": "1",
+						"checked": "text-primary before:bg-primary",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Для дома",
+						"num": "2",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Для офиса",
+						"num": "3",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Одежда",
+						"num": "4",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Электроника",
+						"num": "5",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "ЭКО Товары",
+						"num": "6",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Упаковка для продукции",
+						"num": "7",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Отдых",
+						"num": "8",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Праздники",
+						"num": "9",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Зонты",
+						"num": "10",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Ручки",
+						"num": "11",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Ежедневники",
+						"num": "12",
+						"checked": "",
+						})
+						@@include('../blocks/_checkbox-list-item.html',{
+						"checkbox": "Сумки",
+						"num": "13",
 						"checked": "",
 						})
 					</div>
+					<div class="w-[90%]">
+						<h3 class="text-xl font-semibold mb-7 text-txt_dark">Цена</h3>
+						<div class="relative z-10 range-input">
+							<label for="range-min" class="sr-only">Диапазон минимальной цены</label>
+							<input type="range" id="range-min" name="range_min"
+								class="absolute w-full h-1 bg-transparent appearance-none pointer-events-none range-min" min="0"
+								max="12000" value="0" step="100" aria-label="Диапазон минимальной цены">
+							<label for="range-max" class="sr-only">Диапазон максимальной цены</label>
+							<input type="range" id="range-max" name="range_max"
+								class="absolute w-full h-1 bg-transparent appearance-none pointer-events-none range-max" min="0"
+								max="12000" value="12000" step="100" aria-label="Диапазон максимальной цены">
+						</div>
+						<div class="relative h-1 rounded bg-primary/20 slider">
+							<div class="absolute left-0 right-0 h-full rounded bg-primary progress"></div>
+						</div>
+						<div class="flex w-full mt-7 price-input">
+							<div class="flex items-center w-full h-8 field">
+								<label for="input-min" class="sr-only">Минимальная цена</label>
+								<input type="number" id="input-min" name="min_price"
+									class="w-full h-full text-sm font-medium text-center outline-none text-txt_gray border-y-0 border-s-0 border-gray rounded-s-standard input-min"
+									value="0" aria-label="Минимальная цена">
+							</div>
+							<div class="flex items-center w-full h-8 field">
+								<label for="input-max" class="sr-only">Максимальная цена</label>
+								<input type="number" id="input-max" name="max_price"
+									class="w-full h-full text-sm font-medium text-center outline-none text-txt_gray border-y-0 border-e-0 border-gray rounded-e-standard input-max"
+									value="12000" aria-label="Максимальная цена">
+							</div>
+						</div>
+					</div>
 				</form>
 			</div>
-			<div class="col-span-12"></div>
+			<div class="col-span-9">
+				<div class="grid grid-cols-12 gap-7">					
+						@@include('../blocks/_services-item.html',{
+						"img": "products7",
+						"title": "Поло Spring",
+						"price": "12 000₸"
+						})					
+						@@include('../blocks/_services-item.html',{
+						"img": "products8",
+						"title": "Полотенца	37 х 70 см",
+						"price": "от 12 000₸"
+						})
+						@@include('../blocks/_services-item.html',{
+						"img": "products9",
+						"title": "Бутылка для воды YOGA (420 мл)",
+						"price": "от 12 000₸"
+						})
+						@@include('../blocks/_services-item.html',{
+						"img": "products10",
+						"title": "SNAP - бейсболка",
+						"price": "12 000₸"
+						})
+						@@include('../blocks/_services-item.html',{
+						"img": "products11",
+						"title": "Свитшот унисекс",
+						"price": "от 12 000₸"
+						})
+						@@include('../blocks/_services-item.html',{
+						"img": "products12",
+						"title": "Лонгслив",
+						"price": "от 12 000₸"
+						})
+						@@include('../blocks/_services-item.html',{
+						"img": "products13",
+						"title": "Повербанк DREW",
+						"price": "12 000₸"
+						})
+						@@include('../blocks/_services-item.html',{
+						"img": "products14",
+						"title": "Сумка для покупок PRIME",
+						"price": "от 12 000₸"
+						})
+						@@include('../blocks/_services-item.html',{
+						"img": "products15",
+						"title": "Эко-кружка",
+						"price": "от 12 000₸"
+						})
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

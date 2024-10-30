@@ -22,6 +22,7 @@ export default {
 		},
 		borderRadius: {
 			none: '0',
+			small: '2px',
 			full: '9999px',
 			standard: '20px',
 			large: '30px',
@@ -53,6 +54,8 @@ export default {
 			txt_dark: '#333',
 			white: '#fff',
 			light_gray: '#F0EFEF',
+			txt_light_gray: '#ACACAC',
+			gray: '#D3D3D3',
 		},
 		listStyleType: {
 			none: 'none',

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Контакты</title>
+	<meta charset="UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://fonts.googleapis.com/css?family=Onest:regular,500,600" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
+
+	<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+	<link rel="stylesheet" href="css/template_styles.css" />
+	<link rel="apple-touch-icon" sizes="180x180" href="files/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="files/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="files/favicon-16x16.png">
+	<link rel="manifest" href="files/site.webmanifest">
+	<link rel="shortcut icon" href="files/favicon.ico" />
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.5/jquery.inputmask.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+
+
+	<script src="js/app.js"></script>
+</head>
+<body class="leading-tight bg-white font-Onest">
+	<header class=" mt-2  header z-[120] fixed top-0 inset-x-0">
+	<div class="container ">
+		<div class="px-2 py-5 md:px-8 bg-secondary rounded-standard">
+			<div class="z-40 grid items-center justify-between grid-cols-12 sm:gap-6">
+				<div class="col-span-4 sm:col-span-3 lg:col-span-1 xl:col-span-2">
+					<!-- на главной странице без ссылки -->
+					<a href="/" class="block max-w-full text-center">
+						<img src="./images/logo.png" alt="студия Современных методов печати" title="студия Современных методов печати"
+							class="h-auto max-w-full" width="100" height="40" />
+					</a>
+				</div>
+				<div class="xl:col-span-5 lg:col-span-6 menu lg:block">
+					<nav class="pt-12 mt-12 nav-menu lg:mt-0 lg:pt-0">
+	<ul
+		class="flex flex-col items-center justify-center gap-4 text-lg lg:flex-row lg:justify-between xl:gap-6 text-txt_dark ">
+		<li>
+			<a href="services.html" data-hover="услуги" class="relative text-nowrap  before:absolute before:bottom-0 before:left-0 before:overflow-hidden before:w-0 before:border-b-2 before:border-b-primary hover:text-txt_blue  before:transition-[width] before:duration-500 hover:before:w-full">услуги</a>
+		</li>
+		<li>
+			<a href="portfolio.html" data-hover="портфолио" class="relative text-nowrap  before:absolute before:bottom-0 before:left-0 before:overflow-hidden before:w-0 before:border-b-2 before:border-b-primary hover:text-txt_blue  before:transition-[width] before:duration-500 hover:before:w-full">портфолио</a>
+		</li>
+		<li>
+			<a href="about.html" data-hover="о компании" class="relative text-nowrap  before:absolute before:bottom-0 before:left-0 before:overflow-hidden before:w-0 before:border-b-2 before:border-b-primary hover:text-txt_blue  before:transition-[width] before:duration-500 hover:before:w-full">о компании</a>
+		</li>
+		<li>
+			<a href="news.html" data-hover="новости" class="relative text-nowrap  before:absolute before:bottom-0 before:left-0 before:overflow-hidden before:w-0 before:border-b-2 before:border-b-primary hover:text-txt_blue  before:transition-[width] before:duration-500 hover:before:w-full">новости</a>
+		</li>
+		<li>
+			<a href="contacts.html" data-hover="Контакты" class="relative text-nowrap  before:absolute before:bottom-0 before:left-0 before:overflow-hidden before:w-0 before:border-b-2 before:border-b-primary hover:text-txt_blue  before:transition-[width] before:duration-500 hover:before:w-full">Контакты</a>
+		</li>
+	</ul>
+</nav>
+				</div>
+				<div class="hidden col-span-4 lg:col-span-3 sm:block">
+					<form method="get" action="#" class="flex items-center justify-end gap-1 small-search">
+	<label for="q" class="hidden"></label>
+	<input class="border-none rounded-large py-[6px] w-full" type="text" name="q" value="" placeholder="">
+	<button class="flex items-center justify-center rounded-full size-9 min-w-9 bg-primary" type="submit" value="">
+		<img src="./images/icons/search.svg" alt="поиск" title="поиск" class="" width="16" height="16">
+	</button>
+</form>
+				</div>
+				<div class="col-span-6 sm:col-span-3 lg:col-span-2">
+					<div class="flex justify-center sm:justify-end">
+						<ul class="flex items-center justify-between gap-2 max-w-36">
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 bg-white rounded-full size-9 group/messengers">
+			<img src="./images/icons/insta.svg" alt="instagram" title="instagram" width="18" height="18" />
+		</a>
+	</li>
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 bg-white rounded-full size-9 group/messengers">
+			<img src="./images/icons/viber.svg" alt="viber" title="viber" width="18" height="18" />
+		</a>
+	</li>
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 bg-white rounded-full size-9 group/messengers">
+			<img src="./images/icons/tic-tok.svg" alt="tik-tok" title="tik-tok" width="18" height="18" />
+		</a>
+	</li>
+</ul>
+					</div>
+				</div>
+				<div class="col-span-2 lg:hidden ">
+					<div class="flex justify-end">
+						<button type="button" class="w-full header__burger burger" aria-label="Открыть меню">
+							<span class="relative flex items-center justify-center w-full h-full burger__inner">
+								<span></span>
+							</span>
+						</button>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</header>
+	<main class="mt-[90px]">
+		<div class="container">
+	<nav class="flex mt-12 mb-4" aria-label="Breadcrumb">
+		<ol class="inline-flex items-center space-x-2 text-sm">
+			<li class="inline-flex items-center">
+				<a href="/" class="relative flex items-center text-txt_breadcrumb">
+					<span>Главная</span>
+				</a>
+			</li>
+			<li aria-current="page">
+				<div
+					class="relative flex items-center text-txt_breadcrumb after:absolute after:top-1/2 after:size-px after:bg-txt_breadcrumb after:-left-1">
+					<span>Контакты</span>
+				</div>
+			</li>
+		</ol>
+	</nav>
+</div>
+		<section class="pb-9 contacts">
+	<div class="container">
+		<div class="grid grid-cols-12 pb-3 bg-secondary rounded-standard lg:pb-0">
+			<div class="col-span-12 lg:col-span-6">
+				<div class="map rounded-standard">
+
+					<iframe class="rounded-standard"
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8222.042973220954!2d76.86787966480959!3d43.23190272146466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x388369b401e7c4d3%3A0x1eff0b676b7e16e!2z0KHQtdC80LXQudC90YvQuSDQn9Cw0YDQug!5e0!3m2!1sru!2sby!4v1729668676920!5m2!1sru!2sby"
+						width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+			<div class="col-span-12 lg:col-span-6">
+				<div class="flex flex-col px-4 pt-14">
+					<h1 class="mb-10 text-5xl font-semibold text-txt_dark">Контакты</h1>
+					<div class="grid grid-cols-12 gap-y-12 mb-11">
+						<div class="col-span-12 sm:col-span-6">
+	<div class="flex gap-2">
+		<span class="mt-1">
+			<img src="./images/icons/map.svg" alt="Адрес" title="Адрес" />
+		</span>
+		<div class="flex flex-col gap-1">
+			<h2 class="text-xl font-semibold">Адрес</h2>
+			<a href="#" class="text-sm opacity-70 text-txt_dark">
+				Алматы, Озерковская наб. 22/24с1
+			</a>
+		</div>
+	</div>
+</div>
+						<div class="col-span-12 sm:col-span-6">
+	<div class="flex gap-2">
+		<span class="mt-1">
+			<img src="./images/icons/time.svg" alt="График работы" title="График работы" />
+		</span>
+		<div class="flex flex-col gap-1">
+			<h2 class="text-xl font-semibold">График работы</h2>
+			<a href="#" class="text-sm opacity-70 text-txt_dark">
+				Пн–пт: с 9:00 до 21:00.<br>Сб, вс — с 10:00 до 21:00.
+			</a>
+		</div>
+	</div>
+</div>
+						<div class="col-span-12 sm:col-span-6">
+	<div class="flex gap-2">
+		<span class="mt-1">
+			<img src="./images/icons/mail.svg" alt="Email" title="Email" />
+		</span>
+		<div class="flex flex-col gap-1">
+			<h2 class="text-xl font-semibold">Email</h2>
+			<a href="#" class="text-sm opacity-70 text-txt_dark">
+				zeroprint.kz@mail.ru,
+			</a>
+		</div>
+	</div>
+</div>
+						<div class="col-span-12 sm:col-span-6">
+	<div class="flex gap-2">
+		<span class="mt-1">
+			<img src="./images/icons/phone.svg" alt="Телефон" title="Телефон" />
+		</span>
+		<div class="flex flex-col gap-1">
+			<h2 class="text-xl font-semibold">Телефон</h2>
+			<a href="#" class="text-sm opacity-70 text-txt_dark">
+				+7 747-15-84-039
+			</a>
+		</div>
+	</div>
+</div>
+					</div>
+					<ul class="flex items-center gap-4">
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 rounded-full group/messengers bg-primary size-12">
+			<img src="./images/icons/insta-white.svg" alt="instagram" title="instagram" width="24" height="24" />
+		</a>
+	</li>
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 rounded-full group/messengers bg-primary size-12">
+			<img src="./images/icons/viber-white.svg" alt="viber" title="viber" width="24" height="24" />
+		</a>
+	</li>
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 rounded-full group/messengers bg-primary size-12">
+			<img src="./images/icons/tic-tok-white.svg" alt="tik-tok" title="tik-tok" width="24" height="24" />
+		</a>
+	</li>
+</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+	</main>
+	<footer class="footer bg-secondary rounded-t-standard mt-11">
+	<div class="container">
+		<div class="border-b-[#EBEBEB] border-b border-solid py-12">
+			<div class="grid grid-cols-12 gap-8">
+				<div class="col-span-12 pt-2 md:col-span-3 lg:col-span-2">
+					<!-- на главной странице без ссылки -->
+					<a href="/" class="block max-w-full mb-6 text-center">
+						<img src="./images/logo.png" alt="студия Современных методов печати" title="студия Современных методов печати"
+							class="max-w-full" width="100" height="40" />
+					</a>
+					<ul class="flex items-center justify-between gap-2 max-w-36">
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 bg-white rounded-full size-9 group/messengers">
+			<img src="./images/icons/insta.svg" alt="instagram" title="instagram" width="18" height="18" />
+		</a>
+	</li>
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 bg-white rounded-full size-9 group/messengers">
+			<img src="./images/icons/viber.svg" alt="viber" title="viber" width="18" height="18" />
+		</a>
+	</li>
+	<li>
+		<a href="#"
+			class="flex items-center justify-center transition duration-500 bg-white rounded-full size-9 group/messengers">
+			<img src="./images/icons/tic-tok.svg" alt="tik-tok" title="tik-tok" width="18" height="18" />
+		</a>
+	</li>
+</ul>
+				</div>
+				<div class="col-span-12 md:col-span-7 lg:col-span-10">
+					<div class="mb-5 lg:w-2/3">
+						<h2 class="mb-5 text-4xl font-semibold">Не нашли, что искали?</h2>
+						<div class="text-lg">Оставляйте заявку. Наш менеджер перезвонит вам в ближайшее время и ответит на ваши
+							вопросы.
+						</div>
+					</div>
+					<form class="grid justify-between grid-cols-10 gap-8" action="#">
+						<div class="col-span-12 md:col-span-6 xl:col-span-4">
+							<label for="name" class="hidden">Введите имя</label>
+							<input type="text" name="name" id="name"
+								class="block w-full px-5 py-4 text-lg bg-white border-none rounded-standard focus:outline-none text-black/50"
+								placeholder="Введите имя" required="" />
+						</div>
+						<div class="col-span-12 md:col-span-6 xl:col-span-4 ">
+							<label for="tel" class="hidden">+7 (_ _ _)-_ _ _-_ _-_ _</label>
+							<input type="tel" name="tel" id="tel" placeholder="+7 (_ _ _)-_ _ _-_ _-_ _"
+								class="block w-full p-4 text-lg bg-white border-none rounded-standard focus:outline-none form-phone text-black/50"
+								required="" />
+						</div>
+					
+						<button type="submit"
+							class="relative xl:col-span-2 col-span-12 inline-flex justify-between items-center gap-4 py-2 px-5 overflow-hidden font-medium transition-all border border-primary rounded-[80px]  hover:bg-primary group">
+							<span
+								class="absolute inset-0 border-0 group-hover:border-[40px] ease-linear duration-100 transition-all border-primary rounded-full"></span>
+							<span
+								class="relative w-full text-lg transition-colors duration-500 ease-in-out text-txt_blue text-nowrap group-hover:text-white">оставить
+								заявку</span>
+						</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="py-8">
+			<div class="flex justify-between text-lg ">
+				<div>© 2023 zeroprint</div>
+				<a href="#">Карта сайта</a>
+				<a href="#">Разработка сайта: АТИБ</a>
+			</div>
+		</div>
+	</div>
+</footer>
+	
+</body>
+</html>
