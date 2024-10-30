@@ -1295,6 +1295,9 @@ input[type="range"]::-ms-fill-lower {
 .min-h-12 {
   min-height: 3rem;
 }
+.min-h-14 {
+  min-height: 3.5rem;
+}
 .w-1\/2 {
   width: 50%;
 }
@@ -2108,6 +2111,10 @@ input[type=range]::-moz-range-thumb {
     opacity: 1;
   }
 }
+.services-list a .selected::before {
+  background-image: url(../images/icons/krest.svg);
+}
+
 .slick-arrow {
   width: 20px;
   height: 20px;
@@ -2394,11 +2401,6 @@ input[type=range]::-moz-range-thumb {
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(55 66 243 / var(--tw-bg-opacity));
-}
-
-.before\:bg-\[url\(\.\.\/images\/icons\/krest\.svg\)\]::before {
-  content: var(--tw-content);
-  background-image: url(../images/icons/krest.svg);
 }
 
 .before\:transition-\[width\]::before {

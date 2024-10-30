@@ -2,9 +2,11 @@
 define('TYPE_PAGE', 'TEXT');
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Новости");
-?><? $APPLICATION->IncludeComponent(
-	"bitrix:news", 
-	"services", 
+?>
+<?
+$APPLICATION->IncludeComponent(
+	"bitrix:news",
+	"services",
 	array(
 		"ADD_ELEMENT_CHAIN" => "Y",
 		"ADD_SECTIONS_CHAIN" => "Y",
@@ -91,5 +93,6 @@ $APPLICATION->SetTitle("Новости");
 		)
 	),
 	false
-); ?>
+);
+?>
 <? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

@@ -1,5 +1,6 @@
-
-
+Fancybox.bind('.fancybox, [data-fancybox]', {
+	// Your custom options
+})
 
 // $(window).scroll(function (event) {
 // 	var top = $(window).scrollTop() // Получаем текущую позицию прокрутки

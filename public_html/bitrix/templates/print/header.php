@@ -128,17 +128,7 @@ if (CModule::IncludeModule("victory.options")) {
 		</div>
 	</header>
 	<main <?= TYPE_PAGE === 'TEXT' ? 'class="mt-[90px]"' : ''  ?>>
-		<? if (TYPE_PAGE == 'TEXT') : ?>
-			<? $APPLICATION->IncludeComponent(
-				"bitrix:breadcrumb",
-				"",
-				array(
-					"PATH" => "",
-					"SITE_ID" => SITE_ID,
-					"START_FROM" => "0"
-				)
-			); ?>
-		<? endif; ?>
+
 		<? if (TYPE_PAGE == 'MAIN') : ?>
 			<section class="pt-10 mt-10 mb-4 overflow-hidden hero pb-9">
 				<div class="container">
@@ -168,4 +158,14 @@ if (CModule::IncludeModule("victory.options")) {
 					</div>
 				</div>
 			</section>
+		<? else : ?>
+			<? $APPLICATION->IncludeComponent(
+				"bitrix:breadcrumb",
+				"",
+				array(
+					"PATH" => "",
+					"SITE_ID" => SITE_ID,
+					"START_FROM" => "0"
+				)
+			); ?>
 		<? endif; ?>
