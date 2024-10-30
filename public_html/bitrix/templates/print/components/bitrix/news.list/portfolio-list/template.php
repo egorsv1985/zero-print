@@ -7,7 +7,7 @@
 					<span class="block opacity-70"> <?= date("d.m.Y"); ?> </span>
 				</div>
 				<div class="lg:w-1/2">
-					<h2 class="mb-2 text-5xl font-semibold text-white">Портфолио наших работ</h2>
+					<h1 class="mb-2 text-5xl font-semibold text-white">Портфолио наших работ</h1>
 					<p class="text-lg text-white text-balance">Сайт рыба текст поможет дизайнеру, верстальщику, вебмастеру
 						сгенерировать несколько абзацев более менее осмысленного текста рыбы.</p>
 				</div>

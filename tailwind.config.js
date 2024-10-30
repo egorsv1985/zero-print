@@ -32,6 +32,7 @@ export default {
 			wider: '.01em',
 		},
 		fontSize: {
+			mini: '.75rem',
 			sm: '.875rem',
 			base: '1rem',
 			lg: '1.125rem',
@@ -50,12 +51,15 @@ export default {
 			txt_blue: '#3742f3',
 			txt_gray: '#808080',
 			txt_breadcrumb: '#878787',
+			txt_news: '#787878',
+			txt_date: '#A6A6A6',
 			dark: '#333',
 			txt_dark: '#333',
 			white: '#fff',
 			light_gray: '#F0EFEF',
 			txt_light_gray: '#ACACAC',
 			gray: '#D3D3D3',
+			news_border: '#F1F1F1',
 		},
 		listStyleType: {
 			none: 'none',

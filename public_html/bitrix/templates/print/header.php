@@ -8,6 +8,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 if (!defined("HEADER"))
 	define('HEADER', 'BLACK');
 
+if (!defined("TYPE_PAGE"))
+	define('TYPE_PAGE', 'TEXT');
+
 use \Bitrix\Main\Page\Asset;
 
 $asset = Asset::getInstance();
@@ -101,7 +104,7 @@ if (CModule::IncludeModule("victory.options")) {
 					<div class="hidden col-span-4 lg:col-span-3 sm:block">
 						<form method="get" action="<?= $APPLICATION->GetCurDir(); ?>" class="flex items-center justify-end gap-1 small-search">
 							<label for="q" class="hidden"></label>
-							<input class="border-none rounded-large py-[6px] w-full " type="text" name="q" value="<?= (isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '') ?>" placeholder="">
+							<input class="border-none rounded-large py-[6px] w-full " type="text" id="q" name="q" value="<?= (isset($_GET['q']) ? htmlspecialchars($_GET['q']) : '') ?>" placeholder="">
 							<button class="flex items-center justify-center rounded-full size-9 min-w-9 bg-primary" type="submit" value="">
 								<img src="<?= SITE_TEMPLATE_PATH; ?>/images/icons/search.svg" alt="поиск" title="поиск" class="" width="16" height="16">
 							</button>

@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 							<picture>
 								<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>"
 									alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?> " title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="w-full h-auto rounded-standard" width="288" height="215">
-							</picture>
+							</picture>							
 						</div>
 						<div class="flex items-end justify-between gap-5 px-1 products__desc min-h-14">
 							<div class="text-xl font-medium"><?= $arItem["NAME"] ?></div>

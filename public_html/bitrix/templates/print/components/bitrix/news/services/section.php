@@ -16,7 +16,7 @@ $this->setFrameMode(true);
 
 <div class="services-list">
 	<div class="container">
-		<h2 class="mb-3 text-4xl font-semibold">Услуги</h2>
+		<h1 class="mb-3 text-4xl font-semibold">Услуги</h1>
 		<div class="flex flex-wrap gap-3 text-lg font-medium mb-11 text-txt_gray">
 			<? $APPLICATION->IncludeComponent(
 				"bitrix:menu",
