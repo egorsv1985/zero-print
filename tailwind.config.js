@@ -17,12 +17,12 @@ export default {
 			normal: '1',
 		},
 		boxShadow: {
-			inner:
-				'0 2px 8px 0 rgba(71, 74, 89, 0.08), 0 2px 2px 0 rgba(71, 74, 89, 0.02);',
+			inner: '0 0 10px 0 rgba(0, 0, 0, 1);',
 		},
 		borderRadius: {
 			none: '0',
 			small: '2px',
+			color: '5px',
 			full: '9999px',
 			standard: '20px',
 			large: '30px',
@@ -60,6 +60,7 @@ export default {
 			txt_light_gray: '#ACACAC',
 			gray: '#D3D3D3',
 			news_border: '#F1F1F1',
+			border_color: '#EBE9E9',
 		},
 		listStyleType: {
 			none: 'none',

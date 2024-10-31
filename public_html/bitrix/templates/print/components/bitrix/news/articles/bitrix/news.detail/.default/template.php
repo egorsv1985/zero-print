@@ -76,7 +76,7 @@ $this->setFrameMode(true);
 							<img src="<?= SITE_TEMPLATE_PATH; ?>/images/insta6.webp" alt="insta" class="w-full h-auto">
 						</div>
 					</div>
-				</div>
+				</div>				
 				<div class="px-16">
 					<h2 class="mb-4 text-xl font-semibold text-txt_dark">Популярные статьи</h2>
 					<? $APPLICATION->IncludeComponent(
