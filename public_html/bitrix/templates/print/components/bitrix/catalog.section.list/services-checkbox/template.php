@@ -25,7 +25,7 @@ $this->setFrameMode(true);
 				<div class="flex items-center my-3">
 					<div class="flex items-center">
 						<input id="checkbox-<?= $arSection['ID']; ?>" type="checkbox" value=""
-							class="size-3 rounded-small bg-success checked:bg-primary ring-offset-0 checked:ring-offset-0 focus:ring-offset-0 focus:bg-primary focus:ring-0 focus:outline-none"
+							class="size-3 rounded-small bg-success checked:bg-primary ring-offset-0 checked:ring-offset-0 focus:ring-offset-0 focus:bg-success focus:ring-0 focus:outline-none"
 							required="">
 					</div>
 					<div class="ml-3 text-sm">

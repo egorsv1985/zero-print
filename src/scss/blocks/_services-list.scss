@@ -1,5 +1,5 @@
 .services-list{
-	a .selected::before{
+	a.selected span::before{
 		background-image: url(../images/icons/krest.svg);
 	}
 }

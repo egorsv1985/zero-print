@@ -17,7 +17,7 @@ $this->setFrameMode(true);
 		<div class="flex items-end justify-between mb-8">
 			<h2 class="text-4xl font-semibold">Сувенирная продукция</h2>
 			<a href="/uslugi/"
-				class="text-lg font-medium leading-normal pe-4 products__link text-txt_blue hover:text-txt_dark">перейти в
+				class="text-lg font-medium leading-normal pe-4 products__link text-txt_blue hover:text-txt_dark link__arrow">перейти в
 				каталог</a>
 		</div>
 		<div class="-mx-4 products-slider">
@@ -37,7 +37,7 @@ $this->setFrameMode(true);
 							<picture>
 								<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>"
 									alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?> " title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="w-full h-auto rounded-standard" width="288" height="215">
-							</picture>							
+							</picture>
 						</div>
 						<div class="flex items-end justify-between gap-5 px-1 products__desc min-h-14">
 							<div class="text-xl font-medium"><?= $arItem["NAME"] ?></div>

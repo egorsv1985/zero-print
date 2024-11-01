@@ -18,7 +18,8 @@ export default {
 		},
 		boxShadow: {
 			inner: '0 0 10px 0 rgba(0, 0, 0, 1);',
-		},
+			'combined': '0 2px 8px 0 rgb(71, 74, 89, .02), 0 2px 2px 0 rgb(71, 74, 89, .08)',
+		},		
 		borderRadius: {
 			none: '0',
 			small: '2px',

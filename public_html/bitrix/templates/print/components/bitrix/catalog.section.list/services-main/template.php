@@ -20,7 +20,7 @@ $this->setFrameMode(true);
 		<div class="flex flex-col items-end justify-between gap-3 mb-8 lg:flex-row">
 			<div class="text-lg lg:w-3/5">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать
 				несколько абзацев более менее осмысленного текста рыбы.</div>
-			<a href="/uslugi/" class="text-lg font-medium pe-4 services-main__link text-txt_blue hover:text-txt_dark">перейти к
+			<a href="/uslugi/" class="text-lg font-medium pe-4 services-main__link text-txt_blue hover:text-txt_dark link__arrow">перейти к
 				услугам</a>
 		</div>
 		<div class="grid grid-cols-12 gap-x-8 gap-y-10">

@@ -11,6 +11,11 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+
+global $arFilterMainList;
+$arFilterMainList = array(
+    "!ID" => $currentElementId
+);
 ?>
 <!-- <pre><? print_r($arResult); ?></pre> -->
 <section class="news-detail">
@@ -25,32 +30,78 @@ $this->setFrameMode(true);
 					<h1 class="mb-8 text-5xl font-semibold"><?= $arResult["NAME"] ?></h1>
 					<div class="mb-3 text-sm text-txt_dark/60"><?= $arResult["DISPLAY_ACTIVE_FROM"] ?></div>
 					<div class="flex gap-4 mb-3 text-sm font-medium text-txt_dark">
-						<div class="px-2 py-1 text-center border border-dark rounded-big ">
-							<span class="py-1">
-								дизайн
-							</span>
-						</div>
-						<div class="px-2 py-1 text-center border border-dark rounded-big ">
-							<span class="py-1">
-								креатив
-							</span>
-						</div>
-
+						<?
+						$db_old_groups = CIBlockElement::GetElementGroups($arResult['ID'], true);
+						$ar_new_groups = array($NEW_GROUP_ID);
+						while ($ar_group = $db_old_groups->Fetch()) { ?>
+							<div class="px-2 py-1 text-center border border-dark rounded-big ">
+								<span class="py-1">
+									<?= $ar_group["NAME"] ?>
+								</span>
+							</div>
+						<? }
+						?>
 					</div>
 					<div class="mb-12">
 						<?= $arResult["DETAIL_TEXT"] ?>
-					</div>
+					</div>									
+					
+					<?php
+					// Получаем ID текущего элемента и дату начала активности
+					$currentElementId = $arResult['ID'];
+					$currentElementDate = $arResult['ACTIVE_FROM'];
+
+					// Получаем предыдущую новость
+					$arPrevFilter = array(
+						"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+						"<ACTIVE_FROM" => $currentElementDate,
+						"ACTIVE" => "Y",
+						"!ID" => $currentElementId // Исключаем текущую новость
+					);
+					$arPrevSelect = array("ID", "NAME", "DETAIL_PAGE_URL", "ACTIVE_FROM");
+					$arPrevOrder = array("ACTIVE_FROM" => "DESC");
+
+					$rsPrevElement = CIBlockElement::GetList($arPrevOrder, $arPrevFilter, false, array("nTopCount" => 1), $arPrevSelect);
+					if ($arPrevElement = $rsPrevElement->GetNext()) {
+						$prevLink = $arPrevElement["DETAIL_PAGE_URL"];
+						$prevName = $arPrevElement["NAME"];
+					}
+
+					// Получаем следующую новость
+					$arNextFilter = array(
+						"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+						">ACTIVE_FROM" => $currentElementDate,
+						"ACTIVE" => "Y",
+						"!ID" => $currentElementId // Исключаем текущую новость
+					);
+					$arNextSelect = array("ID", "NAME", "DETAIL_PAGE_URL", "ACTIVE_FROM");
+					$arNextOrder = array("ACTIVE_FROM" => "ASC");
+
+					$rsNextElement = CIBlockElement::GetList($arNextOrder, $arNextFilter, false, array("nTopCount" => 1), $arNextSelect);
+					if ($arNextElement = $rsNextElement->GetNext()) {
+						$nextLink = $arNextElement["DETAIL_PAGE_URL"];
+						$nextName = $arNextElement["NAME"];
+					}
+					?>
+
 					<div class="flex justify-end gap-8">
 						<!-- Previous Button -->
-						<a href="#"
-							class="flex ps-5 items-center justify-center text-lg font-medium text-txt_blue hover:text-txt_gray bg-no-repeat bg-c bg-[url(<?= SITE_TEMPLATE_PATH; ?>/images/icons/prev.svg)]">
-							предыдущая новость </a>
+						<?php if (isset($prevLink)): ?>
+							<a href="<?= $prevLink ?>"
+								class="flex ps-5 items-center justify-center text-lg font-medium text-txt_blue hover:text-txt_gray bg-left bg-no-repeat bg-[url(images/icons/prev.svg)]">
+								предыдущая новость
+							</a>
+						<?php endif; ?>
 
 						<!-- Next Button -->
-						<a href="#"
-							class="flex pe-5 items-center justify-center text-lg font-medium text-txt_blue hover:text-txt_gray bg-no-repeat bg-c bg-right bg-[url(<?= SITE_TEMPLATE_PATH; ?>/images/icons/next.svg)]">
-							следующая новость </a>
+						<?php if (isset($nextLink)): ?>
+							<a href="<?= $nextLink ?>"
+								class="flex pe-5 items-center justify-center text-lg font-medium text-txt_blue hover:text-txt_gray bg-no-repeat bg-right bg-[url(images/icons/next.svg)]">
+								следующая новость
+							</a>
+						<?php endif; ?>
 					</div>
+
 				</div>
 			</div>
 			<div class="col-span-12 lg:col-span-4 ">
@@ -76,7 +127,7 @@ $this->setFrameMode(true);
 							<img src="<?= SITE_TEMPLATE_PATH; ?>/images/insta6.webp" alt="insta" class="w-full h-auto">
 						</div>
 					</div>
-				</div>				
+				</div>
 				<div class="px-16">
 					<h2 class="mb-4 text-xl font-semibold text-txt_dark">Популярные статьи</h2>
 					<? $APPLICATION->IncludeComponent(
@@ -143,11 +194,10 @@ $this->setFrameMode(true);
 							"SORT_ORDER1" => "DESC",
 							"SORT_ORDER2" => "ASC",
 							"STRICT_SECTION_CHECK" => "N",
-							"COMPONENT_TEMPLATE" => "main-tabs"
+							"COMPONENT_TEMPLATE" => "news-detail"
 						),
 						false
 					); ?>
-
 				</div>
 			</div>
 		</div>

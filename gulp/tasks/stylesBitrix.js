@@ -1,9 +1,7 @@
 import {
 	cssDestination,
 	plumberNotify,
-	sassOptions,
-	isProduction,
-	// filterScss,
+	sassOptions,	
 	postcssPlugins,
 	useTailwind,
 } from '../config/options.js'
@@ -17,6 +15,7 @@ export const stylesBitrix = () => {
 		.pipe(plugins.sassGlob())
 		.pipe(plugins.sass(sassOptions))
 		.pipe(plugins.replace('@img', paths.img.css))
+		.pipe(plugins.replace('../images', 'images')) // Заменяем пути
 		.pipe(plugins.postcss(postcssPlugins)) // Применяем PostCSS плагины
 		.pipe(
 			useTailwind

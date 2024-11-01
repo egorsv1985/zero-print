@@ -17,8 +17,8 @@ $this->setFrameMode(true);
 </pre> -->
 <section class="py-12 works bg-primary rounded-standard">
 	<div class="container">
-		<h2 class="mb-10 text-4xl font-semibold text-center text-white">Наши работы</h2>
-		<div class="grid grid-cols-12 mb-5 gap-x-8">
+		<h2 class="text-4xl font-semibold text-center text-white">Наши работы</h2>
+		<div class="grid grid-cols-12 mb-8 gap-x-8">
 			<? foreach ($arResult["ITEMS"] as $key => $arItem): ?>
 				<?
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
