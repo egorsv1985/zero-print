@@ -11,79 +11,52 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
 ?>
 
-<div class="services-list">
-	<div class="container">
-		<h1 class="mb-3 text-4xl font-semibold">Услуги</h1>
-		<div class="flex flex-wrap gap-3 text-lg font-medium mb-11 text-txt_gray">
-			<? $APPLICATION->IncludeComponent(
-				"bitrix:menu",
-				"services-list",
-				array(
-					"ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
-					"CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
-					"DELAY" => "N",	// Откладывать выполнение шаблона меню
-					"MAX_LEVEL" => "1",	// Уровень вложенности меню
-					"MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
-						0 => $APPLICATION->GetCurDir(),
-					),
-					"MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
-					"MENU_CACHE_TYPE" => "N",	// Тип кеширования
-					"MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
-					"ROOT_MENU_TYPE" => "section",	// Тип меню для первого уровня
-					"USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+<?if($arParams["USE_RSS"]=="Y"):?>
+	<?
+	$rss_url = CComponentEngine::makePathFromTemplate($arResult["FOLDER"].$arResult["URL_TEMPLATES"]["rss_section"], array_map("urlencode", $arResult["VARIABLES"]));
+	if(method_exists($APPLICATION, 'addheadstring'))
+		$APPLICATION->AddHeadString('<link rel="alternate" type="application/rss+xml" title="'.$rss_url.'" href="'.$rss_url.'" />');
+	?>
+	<a href="<?=$rss_url?>" title="rss" target="_self"><img alt="RSS" src="<?=$templateFolder?>/images/gif-light/feed-icon-16x16.gif" border="0" align="right" /></a>
+<?endif?>
 
-				),
-				false
-			); ?>
-		</div>
-		<div class="grid grid-cols-12 gap-7">
-			<div class="col-span-12 md:col-span-6 lg:col-span-3">
-				<?
-				$APPLICATION->IncludeComponent(
-					"bitrix:catalog.section.list",
-					"services-checkbox",
-					array(
-						"COMPONENT_TEMPLATE" => "services-checkbox",
-						"IBLOCK_TYPE" => "CONTENT",
-						"IBLOCK_ID" => "3",
-						"SECTION_ID" => "", // Не указываем ID родительского раздела
-						"SECTION_CODE" => $arResult['VARIABLES']['SECTION_CODE'],
-						"COUNT_ELEMENTS" => "Y",
-						"COUNT_ELEMENTS_FILTER" => "CNT_ALL",
-						"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "",
-						"HIDE_SECTIONS_WITH_ZERO_COUNT_ELEMENTS" => "N", // Показывать все подразделы
-						"TOP_DEPTH" => "2", // Установите на 1, чтобы показать только подразделы
-						"SECTION_FIELDS" => array(
-							0 => "",
-							1 => "",
-						),
-						"SECTION_USER_FIELDS" => array(
-							0 => "",
-							1 => "",
-						),
-						"FILTER_NAME" => "",
-						"VIEW_MODE" => "LINE",
-						"SHOW_PARENT_NAME" => "Y", // Не показывать имя родительского раздела
-						"SECTION_URL" => "",
-						"CACHE_TYPE" => "A",
-						"CACHE_TIME" => "7200",
-						"CACHE_GROUPS" => "Y",
-						"CACHE_FILTER" => "N",
-						"ADD_SECTIONS_CHAIN" => "N"
-					),
-					false
-				);
-				?>
-			</div>
-			<div class="col-span-12 md:col-span-6 lg:col-span-9 ">
+<?if($arParams["USE_SEARCH"]=="Y"):?>
+<?=GetMessage("SEARCH_LABEL")?><?$APPLICATION->IncludeComponent(
+	"bitrix:search.form",
+	"flat",
+	Array(
+		"PAGE" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["search"]
+	),
+	$component
+);?>
+<br />
+<?endif?>
+<?if($arParams["USE_FILTER"]=="Y"):?>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.filter",
+	"",
+	Array(
+		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
+		"FILTER_NAME" => $arParams["FILTER_NAME"],
+		"FIELD_CODE" => $arParams["FILTER_FIELD_CODE"],
+		"PROPERTY_CODE" => $arParams["FILTER_PROPERTY_CODE"],
+		"CACHE_TYPE" => $arParams["CACHE_TYPE"],
+		"CACHE_TIME" => $arParams["CACHE_TIME"],
+		"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+		"PAGER_PARAMS_NAME" => $arParams["PAGER_PARAMS_NAME"],
+	),
+	$component
+);
+?>
+<br />
+<?endif?>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list",
-	"services",
+	"",
 	Array(
-		"COL" => 4,
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 		"NEWS_COUNT" => $arParams["NEWS_COUNT"],
@@ -137,7 +110,3 @@ $this->setFrameMode(true);
 	),
 	$component
 );?>
-			</div>
-		</div>
-	</div>
-</div>

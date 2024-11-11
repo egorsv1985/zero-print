@@ -18,8 +18,10 @@ export default {
 		},
 		boxShadow: {
 			inner: '0 0 10px 0 rgba(0, 0, 0, 1);',
-			'combined': '0 2px 8px 0 rgb(71, 74, 89, .02), 0 2px 2px 0 rgb(71, 74, 89, .08)',
-		},		
+			combined:
+				'0 2px 8px 0 rgb(71, 74, 89, .02), 0 2px 2px 0 rgb(71, 74, 89, .08)',
+			table: '0 0 15px 0 rgb(0, 0, 0, .25)',
+		},
 		borderRadius: {
 			none: '0',
 			small: '2px',
@@ -62,6 +64,7 @@ export default {
 			gray: '#D3D3D3',
 			news_border: '#F1F1F1',
 			border_color: '#EBE9E9',
+			border_input: '#A9A0A0',
 		},
 		listStyleType: {
 			none: 'none',

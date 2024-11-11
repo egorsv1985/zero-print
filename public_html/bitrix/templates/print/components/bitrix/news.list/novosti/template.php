@@ -41,7 +41,7 @@ while ($arSections = $rsSections->GetNext()) {
 									<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp">
 									<img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>"
 										class="block w-full opacity-0 rounded-standard"
-										alt="<?= htmlspecialchars($arItem['NAME']); ?>" title="<?= htmlspecialchars($arItem['NAME']); ?>">
+										alt="<?= htmlspecialchars($arItem['NAME']); ?>" title="<?= htmlspecialchars($arItem['NAME']); ?>" width="628" height="530">
 								</picture>
 							</div>
 						</div>

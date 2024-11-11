@@ -11,78 +11,212 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+$IMAGES_ARRAY = array();
+
+foreach ($arResult['PROPERTIES']['IMAGES']['VALUE'] as $key => $IMG) {
+	$IMAGES_ARRAY[] = array(
+		'TITLE' => $arResult['NAME'],
+		'IMG' => $IMG,
+	);
+}
 ?>
-<!-- <pre><? print_r($arResult); ?></pre> -->
 <section class="card ">
 	<div class="container">
 		<div class="py-6 mb-12 rounded-standard bg-secondary">
 			<div class="grid grid-cols-12 gap-8 mb-9">
-				<div class="col-span-12 lg:col-span-6">
-					<div class="flex gap-2 pb-5">
-						<div class="self-end slider-detail">
-							<div class="rounded-standard size-[92px] box-img">
-								<img src="./images/products1.png" alt="" class="w-full h-full rounded-standard" width="92"
-									height="92" title="">
-							</div>
-							<div class="rounded-standard size-[92px] box-img">
-								<img src="./images/products16.png" alt="" class="w-full h-full rounded-standard" width="92"
-									height="92" title="">
-							</div>
-							<div class="rounded-standard size-[92px] box-img">
-								<img src="./images/products17.png" alt="" class="w-full h-full rounded-standard" width="92"
-									height="92" title="">
-							</div>
-						</div>
-						<div class="slider-main w-[518px]">
-							<div class="rounded-standard w-[518px] h-[550px]">
-								<img src="./images/products1.png" alt="" class="w-full h-full rounded-standard" width="518"
-									height="550">
-							</div>
-							<div class="rounded-standard w-[518px] h-[550px]">
-								<img src="./images/products16.png" alt="" class="w-full h-full rounded-standard" width="518"
-									height="550">
-							</div>
-							<div class="rounded-standard w-[518px] h-[550px]">
-								<img src="./images/products17.png" alt="" class="w-full h-full rounded-standard" width="518"
-									height="550">
+				<? if (!empty($arResult["PROPERTIES"]["PRINT_ON_ITEM"]["VALUE"])): ?>
+					<div class="col-span-12 lg:col-span-6">
+						<div class="grid grid-cols-12 gap-2 px-2.5">
+							<div class="col-span-2 ">
+								<div class="-my-2 slider-detail">
+									<? foreach ($IMAGES_ARRAY as $key => $IMAGES):
+										if (CModule::IncludeModule("millcom.phpthumb")) {
+											$WEBP = CMillcomPhpThumb::generateImg($IMAGES['IMG'], 11);
+											$PNG = CMillcomPhpThumb::generateImg($IMAGES['IMG'], 12);
+										}
+									?>
+										<div class="py-2 item" id="item_<?= $arResult['ID']; ?>_<?= $key; ?>">
+											<div class=" rounded-standard box-img">
+												<picture>
+													<source srcset="<?= $WEBP ?>" type="image/webp">
+													<img src="<?= $PNG ?>" alt="<?= $IMAGES['TITLE'] ?>" title="<?= $IMAGES['TITLE'] ?>" loading="lazy" class="rounded-standard" width="92" height="92">
+												</picture>
+											</div>
+										</div>
+									<? endforeach; ?>
+								</div>
+							</div>							
+							<div class="col-span-10">
+
+								<div class="-mx-2 slider-main ">
+									<? foreach ($IMAGES_ARRAY as $key => $IMAGES):
+										if (CModule::IncludeModule("millcom.phpthumb")) {
+											$WEBP = CMillcomPhpThumb::generateImg($IMAGES['IMG'], 13);
+											$PNG = CMillcomPhpThumb::generateImg($IMAGES['IMG'], 14);
+										}
+									?>
+										<div class="px-2 item">
+											<div class="rounded-standard">
+												<picture>
+													<source srcset="<?= $WEBP ?>" type="image/webp">
+													<img src="<?= $PNG ?>" alt="<?= $IMAGES['TITLE'] ?>" title="<?= $IMAGES['TITLE'] ?>" loading="lazy" class="w-full h-full rounded-standard" width="518" height="550">
+												</picture>
+											</div>
+										</div>
+									<? endforeach; ?>
+								</div>
+
+
 							</div>
 						</div>
 					</div>
-				</div>
+				<? endif; ?>
 				<div class="relative col-span-12 lg:col-span-6">
-					<div class="flex flex-wrap justify-between gap-x-12">
-						<div class="">
-							<h1 class="relative mb-2 text-5xl font-semibold text-txt_dark"><?= $arResult["NAME"] ?></h1>
-							<div class="text-base opacity-70 mb-11">Артикул: <?= $arResult["PROPERTIES"]["ARTICLE"]["VALUE"] ?></div>
-							<div class="mb-6 text-lg">Цвет: <span class="text-base opacity-70 ms-1"><?= $arResult["PROPERTIES"]["SELECTED_COLOR"]["VALUE"] ?></span>
+					<form action="<?=$APPLICATION->GetCurDir();?>" method="POST" class="">
+
+					<?
+					$arSelect = Array("ID", "NAME", "*");
+					$arFilter = Array("IBLOCK_ID" => 5, "ACTIVE" => "Y", 'PROPERTY_ITEM' => $arResult["ID"]);
+					$rsOffers = CIBlockElement::GetList(Array(), $arFilter, false, false, $arSelect);
+					$PROPERTIES = array();
+					$OFFERS = array();
+
+					$SELECT_DEF = array();
+					while ($abOffers = $rsOffers->GetNextElement()) {
+						$arOffersFields = $abOffers->GetFields();
+						$arOffersProps = $abOffers->GetProperties();
+						$OFFERS[$arOffersFields['ID']] = array(
+							'PRICE' => trim($arResult["PROPERTIES"]["PRICE"]["VALUE"]),
+							'PROPS' => array()
+						);
+						if ($arOffersProps['PRICE']['VALUE']) $OFFERS[$arOffersFields['ID']]['PRICE'] = $arOffersProps['PRICE']['VALUE'];
+						foreach ($arOffersProps as $PROP) {
+							if (substr($PROP['CODE'], 0, 2) == 'D_') {
+								if ($PROP['VALUE']) {
+									if (!isset($PROPERTIES[substr($PROP['CODE'], 2)])) {
+										$PROPERTIES[substr($PROP['CODE'], 2)] = array(
+											'NAME' => $PROP['NAME'],
+											'NAME1' => $PROP['NAME'],
+											'VALUES' => array()
+										);
+										$SELECT_DEF[substr($PROP['CODE'], 2)] = $PROP['VALUE_XML_ID'];
+									}
+									if (!in_array($PROP['VALUE'], $PROPERTIES[substr($PROP['CODE'], 2)]['VALUES'])) {
+										$PROPERTIES[substr($PROP['CODE'], 2)]['VALUES'][$PROP['VALUE_XML_ID']] = $PROP['VALUE'];
+									}
+									$OFFERS[$arOffersFields['ID']]['PROPS'][substr($PROP['CODE'], 2)] = $PROP['VALUE_XML_ID'];
+								}
+							}
+						}
+					}
+
+					$APPLICATION->AddHeadString('
+					<script>
+						var offers = '.json_encode($OFFERS, JSON_UNESCAPED_UNICODE).';
+						var offersSelect = '.json_encode($SELECT_DEF, JSON_UNESCAPED_UNICODE).';
+					</script>'); // |JSON_PRETTY_PRINT
+					//print_r($PROPERTIES);
+					
+					?>
+						<div class="flex flex-wrap justify-between gap-x-12">
+							<div class="">
+								<h1 class="relative mb-2 text-5xl font-semibold text-txt_dark"><?= $arResult["NAME"] ?></h1>
+								<div class="text-base opacity-70 mb-11">Артикул: <?= $arResult["PROPERTIES"]["ARTICLE"]["VALUE"] ?></div>
 							</div>
-							<ul class="flex flex-wrap gap-2.5 mb-10">
+						</div>
+						
+						<!-- Убрать тут 1/2 -->
+						<?foreach ($PROPERTIES as $PROPERTY_CODE => $PROPERTY):?>
+							<div class=" mb-9">
+								<div class="mb-6 text-lg">
+									<?=$PROPERTY['NAME'];?>: <span class="text-base opacity-70 ms-1" id="label-<?=$PROPERTY_CODE;?>"><?=$PROPERTY['VALUES'][$SELECT_DEF[$PROPERTY_CODE]]?></span>
+								</div>
+								<?if ($PROPERTY_CODE == 'SIZE'):?>
+									<!-- Надо поставить его в нужное место, я бы добавил float:right--> 
+									<button data-modal-target="table-size" data-modal-toggle="table-size"
+										class="block text-sm underline opacity-50 text-txt_blue decoration-dashed" type="button">
+										Таблица размеров
+									</button>
+								<?endif;?>
+								<?if ($PROPERTY_CODE == 'COLOR'):?>
+								<div class="flex flex-wrap gap-2.5 mb-10">
+									<?foreach ($PROPERTY['VALUES'] as $CODE => $VALUE):?>
+										<div class="border offer-color bg-secondary size-10 border-border_color rounded-color ">
+											<input type="radio" name="<?=$PROPERTY_CODE?>" value="<?=$VALUE?>" id="d<?=md5($PROPERTY_CODE.$CODE);?>"<?=($SELECT_DEF[$PROPERTY_CODE] == $CODE ? ' checked="checked"' : '')?>>
+											<label for="d<?=md5($PROPERTY_CODE.$CODE);?>" class="absolute rounded-color" style="background-color:#<?=$CODE;?>"><?=$VALUE?></label>
+										</div>
+									<?endforeach;?>
+								</div>
+								<?else:?>
+									<select id="d<?=md5($PROPERTY_CODE.$CODE);?>" class=" border border-primary text-black text-sm rounded-standard focus:ring-primary focus:border-primary block w-full py-2.5 px-4">
+										<?foreach ($PROPERTY['VALUES'] as $CODE => $VALUE):?>
+											<option value="<?=$CODE;?>"<?=($SELECT_DEF[$PROPERTY_CODE] == $CODE ? ' selected' : '')?>><?=$VALUE?></option>
+										<?endforeach;?>
+									</select>
+								<?endif;?>
+							</div>
+						<?endforeach;?>
+						
+						<div class="sm:w-1/2 mb-9">
+							<div class="mb-6 text-lg">
+								Цвет: <span class="text-base opacity-70 ms-1"><?= $arResult["PROPERTIES"]["SELECTED_COLOR"]["VALUE"] ?></span>
+							</div>
+							<div class="flex flex-wrap gap-2.5 mb-10">
 								<? foreach ($arResult['PROPERTIES']['COLOR']['~VALUE'] as $key => $value) : ?>
-									<li
-										class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
-										<div class="bg-[<?= $arResult['PROPERTIES']['COLOR']['~DESCRIPTION'][$key]; ?>] size-8 rounded-color"></div>
-									</li>
+									<div class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+										<input type="checkbox" class="checkbox bg-[<?= $arResult['PROPERTIES']['COLOR']['~DESCRIPTION'][$key]; ?>] size-8 rounded-color checked:bg-none checked:bg-[<?= $arResult['PROPERTIES']['COLOR']['~DESCRIPTION'][$key]; ?>]" required="">
+										<label class="absolute opacity-0"><?= $arResult['PROPERTIES']['COLOR']['~DESCRIPTION'][$key]; ?></label>
+									</div>
 								<? endforeach; ?>
-							</ul>
+							</div>
 						</div>
-					</div>
-					<form action="#" class="sm:w-1/2 mb-9">
-						<div class="flex justify-between">
-							<label for="sizes" class="block mb-2 text-lg font-medium text-black">Размер:</label>
-							<a href="" class="text-sm underline opacity-50 text-txt_blue decoration-dashed">Таблица размеров</a>
+						<div class="sm:w-1/2 mb-9">
+							<div class="flex justify-between">
+								<label for="sizes" class="block mb-2 text-lg font-medium text-black">Размер:</label>
+
+								<button data-modal-target="table-size" data-modal-toggle="table-size"
+									class="block text-sm underline opacity-50 text-txt_blue decoration-dashed" type="button">
+									Таблица размеров
+								</button>
+							</div>
+							<select id="sizes"
+								class=" border border-primary text-black text-sm rounded-standard focus:ring-primary focus:border-primary block w-full py-2.5 px-4">
+								<option selected>XS</option>
+								<option value="XL">XL</option>
+								<option value="XXL">XXL</option>
+								<option value="SL">SL</option>
+							</select>
 						</div>
-						<select id="sizes"
-							class=" border border-primary text-black text-sm rounded-standard focus:ring-primary focus:border-primary block w-full py-2.5 px-4">
-							<option selected>XS</option>
-							<option value="XL">XL</option>
-							<option value="XXL">XXL</option>
-							<option value="SL">SL</option>
-						</select>
+						
+
+
+
+
+						<h2 class="relative mb-2 text-lg font-semibold text-txt_dark">Описание:</h2>
+						<div class="text-base opacity-70 text-txt_dark sm:w-5/6 mb-9"><?= $arResult["DETAIL_TEXT"] ?>
+						</div>
+						<div class="absolute top-0 overflow-hidden shadow-inner right-3 rounded-standard">
+							<? if (!empty($arResult["PROPERTIES"]["PRICE_WITH_PRINT"]["VALUE"])): ?>
+								<div class="px-4 pt-5 pb-4 bg-white">
+									<div class="text-sm text-txt_dark">с печатью</div>
+									<div class="text-2xl font-medium text-txt_blue"><?= $arResult["PROPERTIES"]["PRICE_WITH_PRINT"]["VALUE"] ?></div>
+								</div>
+							<? endif; ?>
+							<? if (!empty($arResult["PROPERTIES"]["PRINT_ON_ITEM"]["VALUE"])): ?>
+								<div class="flex flex-wrap px-4 pt-2 pb-2.5 bg-secondary">
+									<div class="text-black text-mini sm:w-3/4">печать на вашем изделии:</div>
+									<div class="text-mini text-txt_blue"><?= $arResult["PROPERTIES"]["PRINT_ON_ITEM"]["VALUE"] ?></div>
+								</div>
+							<? endif; ?>
+							<? if (!empty($arResult["PROPERTIES"]["PRICE"]["VALUE"])): ?>
+								<div class="flex justify-between px-4 py-3 bg-primary">
+									<div class="text-sm text-white">без печати:</div>
+									<div class="text-sm text-white"><?= $arResult["PROPERTIES"]["PRICE"]["VALUE"] ?></div>
+								</div>
+							<? endif; ?>
+						</div>
 					</form>
-					<h2 class="relative mb-2 text-lg font-semibold text-txt_dark">Описание:</h2>
-					<div class="text-base opacity-70 text-txt_dark sm:w-5/6 mb-9"><?= $arResult["DETAIL_TEXT"] ?>
-					</div>
-					<button data-modal-target="callback-modal" data-modal-toggle="callback-modal"
+					<button data-modal-target="product-modal" data-modal-toggle="product-modal"
 						class="relative inline-flex justify-between items-center gap-4 ps-4 pe-1 py-1 overflow-hidden font-medium transition-all rounded-[80px] bg-primary hover:bg-white group"
 						type="button">
 						<span
@@ -94,50 +228,42 @@ $this->setFrameMode(true);
 							style="background: #fff url(<?= SITE_TEMPLATE_PATH; ?>/images/icons/btn-arrow.svg) no-repeat center/10px 17px;">
 						</span>
 					</button>
-					<div class="absolute top-0 overflow-hidden shadow-inner right-3 rounded-standard">
-						<div class="px-4 pt-5 pb-4 bg-white">
-							<div class="text-sm text-txt_dark">с печатью</div>
-							<div class="text-2xl font-medium text-txt_blue"><?= $arResult["PROPERTIES"]["PRICE_WITH_PRINT"]["VALUE"] ?></div>
-						</div>
-						<div class="flex flex-wrap px-4 pt-2 pb-2.5 bg-secondary">
-							<div class="text-black text-mini sm:w-3/4">печать на вашем изделии:</div>
-							<div class="text-mini text-txt_blue"><?= $arResult["PROPERTIES"]["PRINT_ON_ITEM"]["VALUE"] ?></div>
-						</div>
-						<div class="flex justify-between px-4 py-3 bg-primary">
-							<div class="text-sm text-white">без печати:</div>
-							<div class="text-sm text-white"><?= $arResult["PROPERTIES"]["PRICE"]["VALUE"] ?></div>
+
+				</div>
+			</div>
+			<? if (!empty($arResult["PROPERTIES"]["CHARACTERISTICS"]["VALUE"])): ?>
+				<div class="px-5 py-6">
+					<h3 class="mb-5 text-lg text-txt_dark">Характеристики:</h3>
+
+					<div class="grid grid-cols-12">
+						<div class="col-span-12 lg:col-span-6">
+							<?
+							$half = ceil(count($arResult['PROPERTIES']['CHARACTERISTICS']['~VALUE']) / 2);
+							foreach ($arResult['PROPERTIES']['CHARACTERISTICS']['~VALUE'] as $key => $value) :
+								// Закрываем первый блок и открываем новый, когда достигаем середины
+								if ($key == $half) {
+									echo '</div><div class="col-span-12 lg:col-span-6">';
+								}
+							?>
+								<div class="flex justify-between mb-3 text-base border-b border-dashed text-txt_dark">
+									<div class="relative z-10 -mb-1 overflow-hidden bg-secondary opacity-70"><?= $value; ?></div>
+									<div class="relative z-10 w-2/5 -mb-1 overflow-hidden bg-secondary"><?= $arResult['PROPERTIES']['CHARACTERISTICS']['~DESCRIPTION'][$key]; ?></div>
+								</div>
+							<? endforeach; ?>
 						</div>
 					</div>
 				</div>
-			</div>
-
-			<div class="px-5 py-6">
-				<h3 class="mb-5 text-lg text-txt_dark">Характеристики:</h3>
-
-				<div class="grid grid-cols-12">
-					<div class="col-span-12 lg:col-span-6">
-						<?php
-						$half = ceil(count($arResult['PROPERTIES']['CHARACTERISTICS']['~VALUE']) / 2);
-						foreach ($arResult['PROPERTIES']['CHARACTERISTICS']['~VALUE'] as $key => $value) :
-							// Закрываем первый блок и открываем новый, когда достигаем середины
-							if ($key == $half) {
-								echo '</div><div class="col-span-12 lg:col-span-6">';
-							}
-						?>
-							<div class="flex justify-between mb-3 text-base border-b border-dashed text-txt_dark">
-								<div class="relative z-10 -mb-1 overflow-hidden bg-secondary opacity-70"><?= $value; ?></div>
-								<div class="relative z-10 w-2/5 -mb-1 overflow-hidden bg-secondary"><?= $arResult['PROPERTIES']['CHARACTERISTICS']['~DESCRIPTION'][$key]; ?></div>
-							</div>
-						<?php endforeach; ?>
-					</div>
-				</div>
-			</div>
+			<? endif; ?>
 		</div>
+
+
+
 		<h2 class="text-4xl font-semibold text-txt_dark mb-9">Вам может понравиться</h2>
 		<? $APPLICATION->IncludeComponent(
 			"bitrix:news.list",
 			"services",
 			array(
+				"COL" => 3,
 				"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 				"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 				"NEWS_COUNT" => 4,
@@ -191,65 +317,5 @@ $this->setFrameMode(true);
 			),
 			$component
 		); ?>
-
-		<!-- <div class="flex flex-wrap gap-3 text-lg font-medium mb-11 text-txt_gray">
-			<div class="col-span-12 sm:col-span-6 lg:col-span-4">
-				<a href="../card.html" class="block h-auto products__item">
-					<div class="flex flex-col justify-between h-full gap-2 px-2 pt-2 pb-5 bg-secondary rounded-standard">
-						<div class="w-full mb-2 products__box-img rounded-standard">
-							<img src="./images/products7.png" alt="Поло Spring " title="Поло Spring"
-								class="w-full h-auto rounded-standard" width="288" height="215">
-						</div>
-						<div class="flex justify-between gap-5 px-1 min-h-12 products__desc">
-							<h3 class="text-xl font-medium">Поло Spring</h3>
-							<span class="self-end inline-block text-txt_blue text-nowrap ">12 000₸</span>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-span-12 sm:col-span-6 lg:col-span-4">
-				<a href="../card.html" class="block h-auto products__item">
-					<div class="flex flex-col justify-between h-full gap-2 px-2 pt-2 pb-5 bg-secondary rounded-standard">
-						<div class="w-full mb-2 products__box-img rounded-standard">
-							<img src="./images/products8.png" alt="Полотенца 37 х 70 см " title="Полотенца 37 х 70 см"
-								class="w-full h-auto rounded-standard" width="288" height="215">
-						</div>
-						<div class="flex justify-between gap-5 px-1 min-h-12 products__desc">
-							<h3 class="text-xl font-medium">Полотенца 37 х 70 см</h3>
-							<span class="self-end inline-block text-txt_blue text-nowrap ">от 12 000₸</span>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-span-12 sm:col-span-6 lg:col-span-4">
-				<a href="../card.html" class="block h-auto products__item">
-					<div class="flex flex-col justify-between h-full gap-2 px-2 pt-2 pb-5 bg-secondary rounded-standard">
-						<div class="w-full mb-2 products__box-img rounded-standard">
-							<img src="./images/products9.png" alt="Бутылка для воды YOGA (420 мл) "
-								title="Бутылка для воды YOGA (420 мл)" class="w-full h-auto rounded-standard" width="288"
-								height="215">
-						</div>
-						<div class="flex justify-between gap-5 px-1 min-h-12 products__desc">
-							<h3 class="text-xl font-medium">Бутылка для воды YOGA (420 мл)</h3>
-							<span class="self-end inline-block text-txt_blue text-nowrap ">от 12 000₸</span>
-						</div>
-					</div>
-				</a>
-			</div>
-			<div class="col-span-12 sm:col-span-6 lg:col-span-4">
-				<a href="../card.html" class="block h-auto products__item">
-					<div class="flex flex-col justify-between h-full gap-2 px-2 pt-2 pb-5 bg-secondary rounded-standard">
-						<div class="w-full mb-2 products__box-img rounded-standard">
-							<img src="./images/products10.png" alt="SNAP - бейсболка " title="SNAP - бейсболка"
-								class="w-full h-auto rounded-standard" width="288" height="215">
-						</div>
-						<div class="flex justify-between gap-5 px-1 min-h-12 products__desc">
-							<h3 class="text-xl font-medium">SNAP - бейсболка</h3>
-							<span class="self-end inline-block text-txt_blue text-nowrap ">12 000₸</span>
-						</div>
-					</div>
-				</a>
-			</div>
-		</div> -->
 	</div>
 </section>

@@ -1,3 +1,6 @@
+
+
+
 Fancybox.bind('.fancybox, [data-fancybox]', {
 	// Your custom options
 })
@@ -45,6 +48,7 @@ jQuery(document).ready(function () {
 // 	id: 'callback-modal',
 // 	override: true,
 // }
+// set the modal menu element
 
 $(document).ready(function () {
 	$('.burger').click(function () {

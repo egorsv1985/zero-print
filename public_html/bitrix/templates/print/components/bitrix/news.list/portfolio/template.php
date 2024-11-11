@@ -33,7 +33,7 @@ $this->setFrameMode(true);
 					<div class="h-full rounded-standard">
 						<picture>
 							<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>"
-								title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="w-full h-full rounded-standard" width="410" height="250">
+								title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="w-full h-full rounded-standard" loading="lazy" width="410" height="250">
 						</picture>
 					</div>
 				</a>

@@ -24,7 +24,7 @@ $this->setFrameMode(true);
 				услугам</a>
 		</div>
 		<div class="grid grid-cols-12 gap-x-8 gap-y-10">
-			<?php foreach ($arResult['SECTIONS'] as $key => $arSection):
+			<? foreach ($arResult['SECTIONS'] as $key => $arSection):
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 
@@ -36,7 +36,7 @@ $this->setFrameMode(true);
 				// Создаем CSS для каждого элемента
 				$CSS = "#image-{$arSection['ID']} .services-main__box-img { 
                     background-image: url('{$imageSrcPng}');
-                    background-image: -webkit-image-set(url('{$imageSrcPng}'));
+                    background-image: -webkit-image-set(url('{$imageSrcWebp}'));
                     background-image: image-set(
                         url('{$imageSrcWebp}') type('image/webp'),
                         url('{$imageSrcPng}') type('image/png');
@@ -53,7 +53,7 @@ $this->setFrameMode(true);
 					</div>
 					<div class="text-xl font-semibold uppercase"><?= $arSection['NAME'] ?></div>
 				</a>
-			<?php endforeach; ?>
+			<? endforeach; ?>
 		</div>
 	</div>
 </section>

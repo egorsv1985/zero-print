@@ -12,9 +12,7 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 ?>
-<!-- <pre>
-	<? print_r($arResult); ?>
-</pre> -->
+
 <div class="grid grid-cols-12 gap-7">
 	<? foreach ($arResult["ITEMS"] as $arItem): ?>
 		<?
@@ -26,7 +24,7 @@ $this->setFrameMode(true);
 			$arItem["PREVIEW_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 8);
 		}
 		?>
-		<div class="col-span-12 sm:col-span-6 lg:col-span-4">
+		<div class="col-span-12 sm:col-span-6 <?=($arParams["COL"] == 3) ? 'lg:col-span-3' : 'lg:col-span-4'?>">
 			<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="block h-auto products__item" id="<?= $this->GetEditAreaId($arItem['ID']); ?>">
 				<div class="flex flex-col justify-between h-full gap-2 px-2 pt-2 pb-5 bg-secondary rounded-standard">
 					<div class="w-full mb-2 products__box-img rounded-standard">

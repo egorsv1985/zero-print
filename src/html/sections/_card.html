@@ -3,9 +3,9 @@
 		<div class="py-6 mb-12 rounded-standard bg-secondary">
 			<div class="grid grid-cols-12 gap-8 mb-9">
 				<div class="col-span-12 lg:col-span-6">
-					<div class="flex gap-2 pb-5">
-						<div class="self-end slider-detail">
-							<div class="rounded-standard size-[92px] box-img">
+					<div class="flex gap-2 pb-5 px-2.5">
+						<div class="self-end slider-detail -my-2">
+							<div class="rounded-standard size-[92px] box-img py-2">
 								<img src="@img/products1.png" alt="" class="w-full h-full rounded-standard" width="92" height="92"
 									title="">
 							</div>
@@ -18,14 +18,14 @@
 									title="">
 							</div>
 						</div>
-						<div class="slider-main w-[518px]">
-							<div class="rounded-standard w-[518px] h-[550px]">
+						<div class="slider-main -mx-2 ">
+							<div class="rounded-standard  ">
 								<img src="@img/products1.png" alt="" class="w-full h-full rounded-standard" width="518" height="550">
 							</div>
-							<div class="rounded-standard w-[518px] h-[550px]">
+							<div class="rounded-standard  ">
 								<img src="@img/products16.png" alt="" class="w-full h-full rounded-standard" width="518" height="550">
 							</div>
-							<div class="rounded-standard w-[518px] h-[550px]">
+							<div class="rounded-standard  ">
 								<img src="@img/products17.png" alt="" class="w-full h-full rounded-standard" width="518" height="550">
 							</div>
 						</div>
@@ -37,6 +37,65 @@
 							<h1 class="relative mb-2 text-5xl font-semibold text-txt_dark">Поло Spring</h1>
 							<div class="text-base opacity-70 mb-11">Артикул: 102903</div>
 							<div class="mb-6 text-lg">Цвет: <span class="text-base opacity-70 ms-1">Серый</span>
+							</div>
+							<div class="flex flex-wrap gap-2.5 mb-10">
+								<div
+									class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+									<input id="checkbox-коричневый" type="checkbox" value=""
+										class="bg-[#9B2E30] size-8 rounded-color checked:bg-none checked:bg-[#9B2E30] " required="">
+									<label for="checkbox-коричневый" class="absolute opacity-0">
+										коричневый
+									</label>
+								</div>
+								<div
+									class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+									<input id="checkbox-коричневый" type="checkbox" value=""
+										class="bg-[#808080] size-8 rounded-color checked:bg-none checked:bg-[#808080] " required="">
+									<label for="checkbox-коричневый" class="absolute opacity-0">
+										коричневый
+									</label>
+								</div>
+								<div
+									class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+									<input id="checkbox-коричневый" type="checkbox" value=""
+										class="bg-[#2FD5C9] size-8 rounded-color checked:bg-none checked:bg-[#2FD5C9] " required="">
+									<label for="checkbox-коричневый" class="absolute opacity-0">
+										коричневый
+									</label>
+								</div>
+								<div
+									class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+									<input id="checkbox-коричневый" type="checkbox" value=""
+										class="bg-[#023220] size-8 rounded-color checked:bg-none checked:bg-[#023220] " required="">
+									<label for="checkbox-коричневый" class="absolute opacity-0">
+										коричневый
+									</label>
+								</div>
+								<div
+									class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+									<input id="checkbox-коричневый" type="checkbox" value=""
+										class="bg-[#F5F5DC] size-8 rounded-color checked:bg-none checked:bg-[#F5F5DC] " required="">
+									<label for="checkbox-коричневый" class="absolute opacity-0">
+										коричневый
+									</label>
+								</div>
+								<div
+									class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+									<input id="checkbox-коричневый" type="checkbox" value=""
+										class="bg-[#0000FF] size-8 rounded-color checked:bg-none checked:bg-[#0000FF] " required="">
+									<label for="checkbox-коричневый" class="absolute opacity-0">
+										коричневый
+									</label>
+								</div>
+								<div
+									class="flex items-center justify-center border bg-secondary size-10 border-border_color rounded-color hover:border-primary">
+									<input id="checkbox-коричневый" type="checkbox" value=""
+										class="bg-[#7000CC] size-8 rounded-color checked:bg-none checked:bg-[#7000CC] " required="">
+									<label for="checkbox-коричневый" class="absolute opacity-0">
+										коричневый
+									</label>
+								</div>
+
 							</div>
 							<ul class="flex flex-wrap gap-2.5 mb-10">
 								<li
@@ -73,8 +132,13 @@
 					<form action="#" class="sm:w-1/2 mb-9">
 						<div class="flex justify-between">
 							<label for="sizes" class="block mb-2 text-lg font-medium text-black">Размер:</label>
-							<a href="" class="text-sm underline opacity-50 text-txt_blue decoration-dashed">Таблица размеров</a>
+
+							<button data-modal-target="table-size" data-modal-toggle="table-size"
+								class="block text-sm underline opacity-50 text-txt_blue decoration-dashed" type="button">
+								Таблица размеров
+							</button>
 						</div>
+						
 						<select id="sizes"
 							class=" border border-primary text-black text-sm rounded-standard focus:ring-primary focus:border-primary block w-full py-2.5 px-4">
 							<option selected>XS</option>
@@ -84,12 +148,13 @@
 						</select>
 					</form>
 					<h2 class="relative mb-2 text-lg font-semibold text-txt_dark">Описание:</h2>
-					<div class="text-base opacity-70 text-txt_dark sm:w-5/6 mb-9">Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру
+					<div class="text-base opacity-70 text-txt_dark sm:w-5/6 mb-9">Сайт рыбатекст поможет дизайнеру, верстальщику,
+						вебмастеру
 						сгенерировать несколько абзацев более менее осмысленного
 						текста рыбы на русском языке, а начинающему оратору отточить навык публичных выступлений в домашних
 						условиях.
 					</div>
-					<button data-modal-target="callback-modal" data-modal-toggle="callback-modal"
+					<button data-modal-target="product-modal" data-modal-toggle="product-modal"
 						class="relative inline-flex justify-between items-center gap-4 ps-4 pe-1 py-1 overflow-hidden font-medium transition-all rounded-[80px] bg-primary hover:bg-white group"
 						type="button">
 						<span
